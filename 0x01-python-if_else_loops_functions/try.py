@@ -1,5 +1,2 @@
 #!/usr/bin/python3
-strs = "hello world"
-
-for i in strs:
-    print(i)
+print(3 ** 2)
