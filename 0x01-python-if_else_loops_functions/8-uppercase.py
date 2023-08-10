@@ -2,6 +2,7 @@
 def islower(c):
     return ((ord(c) >= ord('a')) and (ord(c) <= ord('z')))
 
+
 def uppercase(str):
     for c in str:
         if islower(c):
