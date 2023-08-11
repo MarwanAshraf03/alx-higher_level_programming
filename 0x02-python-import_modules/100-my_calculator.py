@@ -18,4 +18,3 @@ if __name__ == "__main__":
         print("{} * {} = {}".format(a, b, mul(a,b)))
     elif sys.argv[2] == '/':
         print("{} / {} = {}".format(a, b, div(a,b)))
-    
