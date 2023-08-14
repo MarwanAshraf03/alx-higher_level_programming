@@ -12,7 +12,7 @@ int is_palindrome(listint_t **head)
 	listint_t *use2 = *head;
 
 	if (head == NULL)
-		return (0);
+		return (1);
 	while (use != NULL)
 	{
 		len++;
