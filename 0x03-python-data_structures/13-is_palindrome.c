@@ -11,7 +11,7 @@ int is_palindrome(listint_t **head)
 	listint_t *use = *head;
 	listint_t *use2 = *head;
 
-	if (head == NULL)
+	if (head == NULL || *head == NULL)
 		return (1);
 	while (use != NULL)
 	{
