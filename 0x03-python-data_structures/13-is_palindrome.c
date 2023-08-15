@@ -7,29 +7,51 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int i, j, len = 0;
-	listint_t *use = *head;
-	listint_t *use2 = *head;
+	listint_t *Single = *head;
+	listint_t *Static = *head;
+	listint_t *Double = *head;
 
 	if (head == NULL || *head == NULL)
 		return (1);
-	while (use != NULL)
+	while (Double->next != NULL && Double->next->next != NULL)
 	{
-		len++;
-		use = use->next;
+		Single = Single->next;
+		Double = Double->next->next;
 	}
-	int arr[len];
-
-	for (i = 0; i < len; i++)
+	Single = Single->next;
+	Single = rev_list(Single);
+	printf("line 23\n");
+	printf("Static\n");
+	print_listint(Static);
+	printf("Single\n");
+	print_listint(Single);
+	while (Single != NULL)
 	{
-		arr[i] = use2->n;
-		use2 = use2->next;
-	}
-	for (i = 0, j = len - 1; (i < len) && (j >= 0); i++, j--)
-	{
-		if (arr[i] != arr[j])
+		if (Static->n != Single->n)
+		{
 			return (0);
+		}
+		Static = Static->next;
+		Single = Single->next;
 	}
 	return (1);
 }
 
+/**
+ * rev_list - reverses a list
+ * @temp: head of the list
+ * Return: the head of the reversed list
+ */
+listint_t *rev_list(listint_t *temp)
+{
+	listint_t *temp1 = temp, *temp2 = NULL, *temp3 = NULL;
+
+	while (temp1 != NULL)
+	{
+		temp3 = temp1->next;
+		temp1->next = temp2;
+		temp2 = temp1;
+		temp1 = temp3;
+	}
+	return (temp2);
+}
