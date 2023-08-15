@@ -20,11 +20,6 @@ int is_palindrome(listint_t **head)
 	}
 	Single = Single->next;
 	Single = rev_list(Single);
-	printf("line 23\n");
-	printf("Static\n");
-	print_listint(Static);
-	printf("Single\n");
-	print_listint(Single);
 	while (Single != NULL)
 	{
 		if (Static->n != Single->n)
@@ -53,8 +48,5 @@ listint_t *rev_list(listint_t *temp)
 		temp2 = temp1;
 		temp1 = temp3;
 	}
-	free(temp1);
-	free(temp3);
-	free(temp);
 	return (temp2);
 }
