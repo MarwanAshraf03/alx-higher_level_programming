@@ -53,5 +53,8 @@ listint_t *rev_list(listint_t *temp)
 		temp2 = temp1;
 		temp1 = temp3;
 	}
+	free(temp1);
+	free(temp3);
+	free(temp);
 	return (temp2);
 }
