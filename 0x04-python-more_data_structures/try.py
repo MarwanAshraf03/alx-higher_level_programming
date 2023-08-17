@@ -1,3 +1,3 @@
-my_list = [1, 2, 3, 4, 5, 4, 2, 1, 1, 4, 89]
-print(my_list.count(1))
+a_dictionary = {'John': 12, 'Bob': 14, 'Mike': 14, 'Molly': 16, 'Adam': 10}
 
+print(a_dictionary.keys()[1])
