@@ -6,10 +6,10 @@ roman_to_int = __import__('12-roman_to_int').roman_to_int
 roman_number = "X"
 print("{} = {}".format(roman_number, roman_to_int(roman_number)))
 
-roman_number = "IV"
+roman_number = "IIIIV"
 print("{} = {}".format(roman_number, roman_to_int(roman_number)))
 
-roman_number = "XI"
+roman_number = "XIIIII"
 print("{} = {}".format(roman_number, roman_to_int(roman_number)))
 
 roman_number = "LXXXVII"
