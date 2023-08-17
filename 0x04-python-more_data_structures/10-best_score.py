@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def best_score(a_dictionary):
-    if a_dictionary == None:
+    if not a_dictionary:
         return None
     ret = ""
     m = -1
