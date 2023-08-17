@@ -2,7 +2,7 @@
 def roman_to_int(roman_string):
     if not roman_string:
         return 0
-    if not isinstance (roman_string, str):
+    if not isinstance(roman_string, str):
         return 0
     roman_dict = {
         "I": 1,
