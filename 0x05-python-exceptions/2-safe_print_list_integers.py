@@ -1,10 +1,12 @@
 #!/usr/bin/python3
 def safe_print_list_integers(my_list=[], x=0):
-    count = 0
-    while i in my_list:
+    iterator, count = 0, 0
+    while iterator < x:
         try:
-                print("{:d}".format(i))
+                print("{:d}".format(my_list[iterator]), end='')
                 count += 1
         except (ValueError, TypeError):
-            continue
-        return count
+            pass
+        iterator+=1
+    print("\n", end='')
+    return count
