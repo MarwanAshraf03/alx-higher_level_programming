@@ -73,7 +73,7 @@ class Square:
             return
         print(self.__position[1]*"\n", end='')
         for i in range(self.__size):
-            print(self.__position[0]*"_", end='')
+            print(self.__position[0]*" ", end='')
             for j in range(self.__size):
                 print("#", end='')
             print()
