@@ -84,7 +84,8 @@ class Square:
             print(self.__position[0]*" ", end='')
             for j in range(self.__size):
                 print("#", end='')
-            print()
+            if i != self.__size-1:
+                print()
 
     def __str__(self):
         """Prints square with #"""
