@@ -1,11 +1,17 @@
 #!/usr/bin/python3
+"""An add_integer module to add two numbers"""
+
+
 def add_integer(a, b=98):
-    if not isinstance(a, int) | not isinstance(a, float):
+    """
+    Returns: a + b
+
+    Args:
+        a: first number to be added
+        b: second number to be added
+    """
+    if type(a).__name__ not in ("int", "float"):
         raise TypeError("a must be an integer")
-    if not isinstance(b, int) | not isinstance(b, float):
+    if type(b).__name__ not in ("int", "float"):
         raise TypeError("b must be an integer")
-    if isinstance(a, float):
-        a = int(a)
-    if isinstance(b, float):
-        b = int(b)
-    return a + b
+    return int(a) + int(b)
