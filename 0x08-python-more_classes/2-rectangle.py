@@ -8,6 +8,7 @@ class Rectangle:
     creates empty rectangle
     """
 
+
     def __init__(self, width=0, height=0):
         """initializing method
 
