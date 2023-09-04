@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def matrix_divided(mat, div):
     mat_bool = any(isinstance(i, list) for i in mat)
     if type(div).__name__ not in ("int", "float"):

@@ -1,14 +1,21 @@
 #!/usr/bin/python3
 def text_indentation(text):
     if not isinstance(text, str):
-        return
-    leng = len(text)
+        raise TypeError("text must be a string")
+    words = text.split()
+    leng = len(words)
     i = 0
     while i < leng:
-        # print(i, end='')
-        if text[i] in ('.', '?', ':'):
-            print(f"{text[i]}\n\n", end='')
-            i += 1
+        if (words[i][-1] in ('.', '?', ':')) & (len(words[i])==1):
+            words[i-1] += words[i]
+            del words[i]
+        i += 1
+        leng = len(words)
+    leng = len(words)
+    i = 0
+    while i < leng:
+        if words[i][-1] in ('.', '?', ':'):
+            print(f"{words[i]}\n\n", end='')
         else:
-            print(text[i], end='')
+            print(words[i], end=' ' if i+1 != leng else '')
         i += 1
