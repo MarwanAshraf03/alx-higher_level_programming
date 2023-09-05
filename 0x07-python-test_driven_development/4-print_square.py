@@ -1,5 +1,14 @@
 #!/usr/bin/python3
+"""Print Square Module"""
+
+
 def print_square(size):
+    """
+    prints square of perimeter size * size
+
+    Args:
+    size: the side length of square
+    """
     if type(size).__name__ in ("int", "float"):
         if isinstance(size, float) and size < 0:
             raise TypeError("size must be >= 0")

@@ -1,5 +1,14 @@
 #!/usr/bin/python3
+"""Text Indentation Module"""
+
+
 def text_indentation(text):
+    """
+    prints text indented with ., ? and :
+
+    Args:
+    text: text to be indented
+    """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     words = text.split()
