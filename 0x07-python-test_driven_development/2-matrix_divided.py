@@ -38,9 +38,6 @@ def matrix_divided(matrix, div):
     for counter in range(mat_size[0]):
         inner = []
         for counter2 in range(mat_size[1]):
-            num = matrix[counter][counter2]
-            if type(num).__name__ not in ("int", "float"):
-                raise TypeError(s)
             inner.append(round((matrix[counter][counter2])/div, 2))
         ret.append(inner)
     return ret
