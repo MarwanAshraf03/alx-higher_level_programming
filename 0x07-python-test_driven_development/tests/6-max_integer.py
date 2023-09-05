@@ -17,4 +17,4 @@ def max_integer(list=[]):
         i += 1
     return result
 
-max_integer([])
+print(max_integer(["True", "False", "School"]))
