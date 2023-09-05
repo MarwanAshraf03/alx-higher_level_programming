@@ -6,7 +6,7 @@ max_integer = __import__('6-max_integer').max_integer
 
 
 class TestMaxInteger(unittest.TestCase):
-    """Unittest for max_integer()"""
+    """Unittest class for max_integer()"""
 
     def test_noArgs(self):
         """Test for no arguments"""
