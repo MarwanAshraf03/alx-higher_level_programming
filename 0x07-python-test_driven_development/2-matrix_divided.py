@@ -22,6 +22,8 @@ def matrix_divided(matrix, div):
         raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
     if not isinstance(matrix[0], list):
         raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+    if len(matrix[0]) == 0:
+        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
     len_check = all([len(i) == len(matrix[0]) for i in matrix])
     if not len_check:
         raise TypeError("Each row of the matrix must have the same size")
@@ -36,3 +38,7 @@ def matrix_divided(matrix, div):
             inner.append(round((matrix[counter][counter2])/div, 2))
         ret.append(inner)
     return ret
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testfile("tests/2-matrix_divided.txt")
