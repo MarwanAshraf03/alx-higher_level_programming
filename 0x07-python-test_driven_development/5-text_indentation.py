@@ -26,6 +26,7 @@ def text_indentation(text):
         else:
             print(i, end='')
 
+
 if __name__ == "__main__":
     import doctest
     doctest.testfile("tests/5-text_indentation.txt")
