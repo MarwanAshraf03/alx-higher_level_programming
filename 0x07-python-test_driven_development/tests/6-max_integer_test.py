@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Unittest for max_integer([..])
+"""
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
@@ -22,6 +24,10 @@ class TestMaxInteger(unittest.TestCase):
         """Test for repeated items"""
         self.assertEqual(max_integer([1, 2, 2]), 2)
 
+    def test_negativeNumbers(self):
+        """Test for negative numbers"""
+        self.assertEqual(max_integer([-1, -2, -3]), -1)
+
     def test_tupleOneElement(self):
         """Test for one element tuple"""
         self.assertEqual(max_integer((2, )), 2)
@@ -33,6 +39,10 @@ class TestMaxInteger(unittest.TestCase):
     def test_string(self):
         """Test for string"""
         self.assertEqual(max_integer("True"), "u")
+    
+    def test_oneStringList(self):
+        """Test for string"""
+        self.assertEqual(max_integer(["True"]), "True")
 
     def test_stringList(self):
         """Test for list of strings"""
