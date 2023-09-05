@@ -4,11 +4,13 @@
 
 def add_integer(a, b=98):
     """
-    Returns: a + b
+    adds two integer or float numbers
 
     Args:
         a: first number to be added
         b: second number to be added
+    Return:
+    a + b
     """
     if type(a).__name__ not in ("int", "float"):
         raise TypeError("a must be an integer")
