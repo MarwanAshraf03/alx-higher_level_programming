@@ -27,8 +27,11 @@ def matrix_divided(matrix, div):
         raise TypeError(s)
     if len(matrix[0]) == 0:
         raise TypeError(s)
-    len_check = all([len(i) == len(matrix[0]) for i in matrix])
-    if not len_check:
+    if not all([isinstance(i, list) for i in matrix]):
+        raise TypeError(s)
+    if not all([isinstance(k, (int, float)) for i in matrix for k in i]):
+        raise TypeError(s)
+    if not all([len(j) == len(matrix[0]) for j in matrix]):
         raise TypeError("Each row of the matrix must have the same size")
     mat_size = (len(matrix), len(matrix[0]))
     ret = []
