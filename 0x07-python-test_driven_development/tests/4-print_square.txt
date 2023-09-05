@@ -25,6 +25,16 @@ Traceback (most recent call last):
 ...
 TypeError: size must be an integer
 
+>>> print_square((2.5, ))
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+>>> print_square([])
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
 >>> print_square()
 Traceback (most recent call last):
 ...
