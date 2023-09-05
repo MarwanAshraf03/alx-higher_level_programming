@@ -11,9 +11,20 @@ def text_indentation(text):
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    
+
     text = text.strip()
-    
+    for i in range(10):
+        text = text.replace("? ", "?")
+        text = text.replace(". ", ".")
+        text = text.replace(": ", ":")
+        text = text.replace(" ?", "?")
+        text = text.replace(" .", ".")
+        text = text.replace(" :", ":")
+    for i in text:
+        if i in ('?', '.', ':'):
+            print(i, end="\n\n")
+        else:
+            print(i, end='')
 
 if __name__ == "__main__":
     import doctest
