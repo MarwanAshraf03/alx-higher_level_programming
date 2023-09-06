@@ -11,9 +11,13 @@ def matrix_mul(m_a, m_b):
     if not all([isinstance(i, list) for i in m_b]):
         raise TypeError("m_b must be a list of lists")
     # check if matrices are empty
-    if (len(m_a) == 0) | (len(m_a[0])):
+    if (len(m_a) == 0):
         raise ValueError("m_a can't be empty")
-    if (len(m_b) == 0) | (len(m_b[0])):
+    if (len(m_a[0]) == 0):
+        raise ValueError("m_a can't be empty")
+    if (len(m_b) == 0):
+        raise ValueError("m_b can't be empty")
+    if (len(m_b[0]) == 0):
         raise ValueError("m_b can't be empty")
     # check if values are not int or float
     if not all([isinstance(k, (int, float)) for i in m_a for k in i]):
@@ -34,10 +38,15 @@ def matrix_mul(m_a, m_b):
     ret1 = []
     for i in range(m_a_dim[0]):
         ret2 = []
-        appe = 0
-        for j in range(m_a_dim[1]):
-            appe += (m_a[i][j] * m_b[j][i])
-            if j == (m_a_dim[1] - 1):
-                ret2.append(appe)
+        for j in range(m_b_dim[1]):
+            appe = 0
+            for k in range(m_a_dim[1]):
+                appe += (m_a[i][k] * m_b[k][j])
+            ret2.append(appe)
         ret1.append(ret2)
     return ret1
+
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testfile("tests/100-matrix_mul.txt")
