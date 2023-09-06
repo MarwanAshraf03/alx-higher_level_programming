@@ -1,5 +1,19 @@
 #!/usr/bin/python3
+"""Matrix Multiplication Module"""
+
+
 def matrix_mul(m_a, m_b):
+    """
+    Multiplies two matricies
+
+    Args:
+    m_a: first matrix (list of lists of integer and float numbers)
+    m_b: second matrix (list of lists of integer and float numbers)
+
+    Return:
+    returns: new matrix which is the product of m_a and m_b
+    """
+
     # check if matrix is a list
     if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")
@@ -34,7 +48,7 @@ def matrix_mul(m_a, m_b):
     # check if dimensions are able to be multiplied
     if not (m_a_dim[1] == m_b_dim[0]):
         raise ValueError("m_a and m_b can't be multiplied")
-    
+
     ret1 = []
     for i in range(m_a_dim[0]):
         ret2 = []
