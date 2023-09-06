@@ -15,6 +15,9 @@ mat2 = [
     [1, 2]
 ]
 
+mat3 = [[1, 2],[1, 2, 3],[1],[1, 4, 6, 2]]
+
+
 print(
-    matrix_mul(mat1, mat2)
+    matrix_mul(mat2, mat3)
 )

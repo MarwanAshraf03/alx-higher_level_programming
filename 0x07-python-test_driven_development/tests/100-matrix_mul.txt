@@ -107,6 +107,8 @@ TypeError: m_b should contain only integers or floats
 
 >>> mat2 = [[1, 2],[1, 2],[1, 2],[1, 2]]
 
+>>> mat3 = [[1, 2],[1, 2, 3],[1],[1, 4, 6, 2]]
+
 >>> matrix_mul(mat2, mat1)
 Traceback (most recent call last):
 ...
@@ -114,3 +116,13 @@ ValueError: m_a and m_b can't be multiplied
 
 >>> matrix_mul(mat1, mat2)
 [[10, 20], [26, 52], [15, 30]]
+
+>>> matrix_mul(mat3, mat2)
+Traceback (most recent call last):
+...
+TypeError: each row of m_a must be of the same size
+
+>>> matrix_mul(mat2, mat3)
+Traceback (most recent call last):
+...
+TypeError: each row of m_b must be of the same size
