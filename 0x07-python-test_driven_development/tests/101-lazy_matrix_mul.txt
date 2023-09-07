@@ -113,6 +113,15 @@ array([[13, 16]])
 array([[4.75, 7.5 ],
        [4.5 , 7.75]])
 
+>>> ma = [[1, 2, 3], [3, 4, 5]]
+
+>>> mb = [[1, 2], [3, 4]]
+
+>>> lazy_matrix_mul(ma, mb)
+Traceback (most recent call last):
+...
+ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 2 is different from 3)
+
 >>> lazy_matrix_mul(mat2, mat1)
 Traceback (most recent call last):
 ...
