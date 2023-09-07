@@ -107,11 +107,11 @@ array([[13, 16]])
 
 >>> mat3 = [[1, 2],[1, 2, 3],[1],[1, 4, 6, 2]]
 
->>> mat4 = [[1, 2],[1, 2]]
+>>> mat4 = [[1, 2.5],[1.5, 2]]
 
 >>> lazy_matrix_mul(mat4, mat4)
-array([[3, 6],
-       [3, 6]])
+array([[4.75, 7.5 ],
+       [4.5 , 7.75]])
 
 >>> lazy_matrix_mul(mat2, mat1)
 Traceback (most recent call last):
