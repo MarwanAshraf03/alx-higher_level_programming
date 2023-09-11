@@ -4,44 +4,65 @@
 Using ``BaseGeometry``
 ----------------------
 
+add function
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
->>> bg = BaseGeometry(15)
+Calling BaseGeometry class with argumnet
+>>> bg = BaseGeometry(15) #doctest: +ELLIPSIS
 Traceback (most recent call last):
+    ...
 TypeError: BaseGeometry() takes no arguments
 
+Calling BaseGeometry class
 >>> bg = BaseGeometry()
 
+Checking if bg is instance of BaseGeometry class
 >>> isinstance(bg, BaseGeometry)
 True
 
+Checking if bg has type of BaseGeometry class
 >>> type(bg) is BaseGeometry
 True
 
->>> bg.area()
+Calling area() method
+>>> bg.area() #doctest: +ELLIPSIS
 Traceback (most recent call last):
+    ...
 Exception: area() is not implemented
 
->>> bg.area(12)
+
+Calling area() method with argument
+>>> bg.area(12) #doctest: +ELLIPSIS
 Traceback (most recent call last):
+    ...
 TypeError: BaseGeometry.area() takes 1 positional argument but 2 were given
 
->>> bg.integer_validator("my_int", 12, 13)
+Calling integer_validator() method with 3 arguments
+>>> bg.integer_validator("my_int", 12, 13) #doctest: +ELLIPSIS
 Traceback (most recent call last):
+    ...
 TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 4 were given
 
+Calling integer_validator() method with integer value
 >>> bg.integer_validator("my_int", 12)
 
+Calling integer_validator() method with integer value 2nd time
 >>> bg.integer_validator("width", 89)
 
->>> bg.integer_validator("name", "John")
+Calling integer_validator() method with string value
+>>> bg.integer_validator("name", "John") #doctest: +ELLIPSIS
 Traceback (most recent call last):
+    ...
 TypeError: name must be an integer
 
->>> bg.integer_validator("age", 0)
+Calling integer_validator() method with integer value = 0
+>>> bg.integer_validator("age", 0) #doctest: +ELLIPSIS
 Traceback (most recent call last):
+    ...
 ValueError: age must be greater than 0
 
->>> bg.integer_validator("distance", -4)
+Calling integer_validator() method with integer value < 0
+>>> bg.integer_validator("distance", -4) #doctest: +ELLIPSIS
 Traceback (most recent call last):
+    ...
 ValueError: distance must be greater than 0
