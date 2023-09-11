@@ -1,4 +1,8 @@
-Module `7-base_geometry`
+``7-base_geometry`` module
+==========================
+
+Using ``BaseGeometry``
+----------------------
 
 add function
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
