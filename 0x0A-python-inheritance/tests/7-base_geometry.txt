@@ -5,7 +5,13 @@
 >>> type(bg) is BaseGeometry
 True
 
+>>> type(bg) == BaseGeometry
+True
+
 >>> isinstance(bg, BaseGeometry)
+True
+
+>>> isinstance(BaseGeometry, object)
 True
 
 >>> bg.area()
