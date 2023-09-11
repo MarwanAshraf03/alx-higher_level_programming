@@ -2,7 +2,7 @@
 """Improved BaseGeometry Module"""
 
 
-class BaseGeometry():
+class BaseGeometry:
     """Improved BaseGeometry class"""
 
     def area(self):
