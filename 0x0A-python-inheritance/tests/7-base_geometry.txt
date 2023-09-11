@@ -1,6 +1,6 @@
 Module `7-base_geometry`
 
-Import function
+add function
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 Calling BaseGeometry class with argumnet
