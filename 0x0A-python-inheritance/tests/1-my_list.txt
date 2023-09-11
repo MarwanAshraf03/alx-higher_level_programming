@@ -9,6 +9,8 @@ Check that MyList is subclass of list
 True
 
 >>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
 
 Check that variable my_list is instance of MyList
 >>> isinstance(my_list, MyList)
