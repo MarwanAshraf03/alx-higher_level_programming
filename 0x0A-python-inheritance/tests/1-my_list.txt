@@ -3,17 +3,12 @@ Module `my_list`
 Import function
 >>> MyList = __import__('1-my_list').MyList
 
->>> my_list = MyList()
-
-Check append method
->>> my_list.append(13)
->>> my_list.append(12)
->>> my_list.append(11)
->>> my_list.append(10)
 
 Check that MyList is subclass of list
 >>> issubclass(MyList, list)
 True
+
+>>> my_list = MyList()
 
 Check that variable my_list is instance of MyList
 >>> isinstance(my_list, MyList)
@@ -22,6 +17,12 @@ True
 Check that variable my_list is instance of list
 >>> isinstance(my_list, list)
 True
+
+Check append method
+>>> my_list.append(13)
+>>> my_list.append(12)
+>>> my_list.append(11)
+>>> my_list.append(10)
 
 >>> print(my_list)
 [13, 12, 11, 10]
