@@ -3,8 +3,6 @@ Module `7-base_geometry`
 Import function
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
->>> type(bg) is BaseGeometry
-True
 
 >>> bg = BaseGeometry(15)
 Traceback (most recent call last):
@@ -14,6 +12,9 @@ TypeError: BaseGeometry() takes no arguments
 >>> bg = BaseGeometry()
 
 >>> isinstance(bg, BaseGeometry)
+True
+
+>>> type(bg) is BaseGeometry
 True
 
 >>> bg.area()
