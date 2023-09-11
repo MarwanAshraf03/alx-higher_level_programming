@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""BaseGeometry Module"""
+"""Improved BaseGeometry Module"""
 
 
-class BaseGeometry:
+class BaseGeometry():
     """Improved BaseGeometry class"""
 
     def area(self):
@@ -13,14 +13,13 @@ class BaseGeometry:
 
     def integer_validator(self, name, value):
         """
-        validates value to be integer
+        validates value to be int
 
         Args:
         name: name of the value
         value: value to be evaluated
         """
         if type(value) is not int:
-            raise TypeError(f"{name} must be an integer")
-
+            raise TypeError("{} must be an integer".format(name))
         if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
+            raise ValueError("{} must be greater than 0".format(name))
