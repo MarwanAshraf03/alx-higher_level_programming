@@ -10,6 +10,18 @@ True
 
 >>> my_list = MyList()
 
+print_sorted method called with 1 arg
+>>> my_list.print_sorted([4, 2, 5])
+Traceback (most recent call last):
+...
+TypeError: MyList.print_sorted() takes 1 positional argument but 2 were given
+
+print_sorted method called with 2 args
+>>> my_list.print_sorted([4, 2, 5], 1)
+Traceback (most recent call last):
+...
+TypeError: MyList.print_sorted() takes 1 positional argument but 3 were given
+
 Check that variable my_list is instance of MyList
 >>> isinstance(my_list, MyList)
 True
