@@ -1,10 +1,10 @@
 #!/usr/bin/python3
+"""Add Item Module"""
 import json
 import sys
 import os
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
-"""Add Item Module"""
 """
 adds the arguments
 of the file to list of
