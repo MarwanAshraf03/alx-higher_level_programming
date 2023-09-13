@@ -16,7 +16,6 @@ def append_after(filename="", search_string="", new_string=""):
     for i in range(len(lis)):
         if lis[i].find(search_string) >= 0:
             lis.insert(i+1, new_string)
-    print(lis)
 
     with open(filename, "w", encoding="UTF8") as f:
         for i in lis:
