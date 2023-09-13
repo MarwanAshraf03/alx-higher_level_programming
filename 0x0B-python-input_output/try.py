@@ -1,5 +1,11 @@
 #!/usr/bin/python3
-l = ["s", "k", "y"]
+l = ["fName", "age", "hi"]
+d = {
+    "fName": "jack",
+    "lName": "sparrow",
+    "age": 19
+}
 
-bool = all([isinstance(i, str)] for i in l)
-print(bool)
+for i in l:
+    if i in d.keys():
+        print(d[i])
