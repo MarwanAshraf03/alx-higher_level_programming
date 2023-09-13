@@ -36,6 +36,5 @@ class Student:
 
     def reload_from_json(self, json):
         """sets values of student form json file"""
-        self.__dict__["first_name"] = json["first_name"]
-        self.__dict__["last_name"] = json["last_name"]
-        self.__dict__["age"] = json["age"]
+        for k, v in json.items():
+            self.__dict__[k] = v
