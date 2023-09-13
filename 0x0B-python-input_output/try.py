@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-stri = "pythonic"
-print(stri.find("python"))
+stri = "yoasdfuarepythonic"
+print(stri.find("hero"))

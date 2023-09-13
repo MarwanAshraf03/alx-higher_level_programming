@@ -4,8 +4,6 @@
 
 def append_after(filename="", search_string="", new_string=""):
     with open(filename, "a+", encoding="UTF8") as f:
-        lstr = [*search_string]
         for line in f.readline():
-            lline = [*line]
-            return
-    pass
+            if line.find(search_string) >= 0:
+                f.write(new_string)
