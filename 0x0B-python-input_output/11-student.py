@@ -36,4 +36,8 @@ class Student:
 
     def reload_from_json(self, json):
         """sets values of student form json file"""
-        self.__init__(json["first_name"], json["last_name"], json["age"])
+        self.__init__(
+            json["first_name"],
+            json["last_name"],
+            json["age"]
+        )
