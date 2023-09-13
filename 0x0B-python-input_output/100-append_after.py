@@ -17,7 +17,5 @@ def append_after(filename="", search_string="", new_string=""):
             w += i
             if search_string in i:
                 w += new_string
-    
-
     with open(filename, "w", encoding="UTF8") as f:
-            f.write(w)
+        f.write(w)
