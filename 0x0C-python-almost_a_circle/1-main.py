@@ -12,3 +12,22 @@ if __name__ == "__main__":
 
     r3 = Rectangle(10, 2, 0, 0, 12)
     print(r3.id)
+
+print(
+    r1.width,
+    r1.height,
+    r1.x,
+    r1.y
+)
+print(
+    r2.width,
+    r2.height,
+    r2.x,
+    r2.y
+)
+print(
+    r3.width,
+    r3.height,
+    r3.x,
+    r3.y
+)
