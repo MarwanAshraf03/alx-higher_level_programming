@@ -94,14 +94,13 @@ class Rectangle(Base):
 
     def update(self, *args):
         for i in range(len(args)):
-            if i == 0:
-                if args[i] is not None:
-                    super().__init__(args[i])
-            if i == 1:
+            if (i == 0) and (args[i] is not None):
+                self.id = args[i]
+            if (i == 1) and (args[i] is not None):
                 self.width = args[i]
-            if i == 2:
+            if (i == 2) and (args[i] is not None):
                 self.height = args[i]
-            if i == 3:
+            if (i == 3) and (args[i] is not None):
                 self.x = args[i]
-            if i == 4:
+            if (i == 4) and (args[i] is not None):
                 self.y = args[i]
