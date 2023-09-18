@@ -83,8 +83,8 @@ class Rectangle(Base):
 
     def display(self):
         """prints rectangle with # character"""
-        str = self.x * "\n" + (self.height * (
-            (self.y * " ") + self.width * "#" + '\n'
+        str = self.y * "\n" + (self.height * (
+            (self.x * " ") + self.width * "#" + '\n'
             ))
         print(str[:-1])
 
