@@ -67,5 +67,3 @@ class Base:
         for i in lst:
             ret.append(cls.create(**i))
         return ret
-
-print(Base.__doc__)
