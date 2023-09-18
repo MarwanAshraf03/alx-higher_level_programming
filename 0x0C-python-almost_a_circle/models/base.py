@@ -1,7 +1,7 @@
 #!/usr/bin/python3
+"""Base Module"""
 import json
 from pathlib import Path
-"""Base Module"""
 
 
 class Base:
