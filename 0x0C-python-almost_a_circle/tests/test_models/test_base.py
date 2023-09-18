@@ -40,6 +40,9 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b3.id, 2)
         self.re()
 
+    def test_(self):
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()
