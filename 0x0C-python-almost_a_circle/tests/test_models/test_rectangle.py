@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""Unittest for base class"""
+"""Unittest for Rectangle class"""
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
 
 
 class TestRectangle(unittest.TestCase):
-    """Define unittests for testing instantiation of the Rectangle class"""
+    """Define unittests for testing of Rectangle class"""
 
     def re(self):
         """Reset nb_instances to 0"""
@@ -69,6 +69,54 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             r = Rectangle(12, {})
 
+    def test_instantiation_with_x_wrong(self):
+        with self.assertRaises(TypeError):
+            r = Rectangle(12, 15, "2", 5)
+
+    def test_instantiation_with_x_wrong2(self):
+        with self.assertRaises(ValueError):
+            r = Rectangle(12, 15, -2, 5)
+
+    def test_instantiation_with_x_wrong3(self):
+        with self.assertRaises(TypeError):
+            r = Rectangle(12, 15, 2.5, 5)
+
+    def test_instantiation_with_x_wrong4(self):
+        with self.assertRaises(TypeError):
+            r = Rectangle(12, 15, (2, ), 5)
+
+    def test_instantiation_with_x_wrong5(self):
+        with self.assertRaises(TypeError):
+            r = Rectangle(12, 15, [2], 5)
+
+    def test_instantiation_with_x_wrong6(self):
+        with self.assertRaises(TypeError):
+            r = Rectangle(12, 15, {}, 5)
+
+    def test_instantiation_with_y_wrong2(self):
+        with self.assertRaises(TypeError):
+            r = Rectangle(12, 15, 5, "2")
+
+    def test_instantiation_with_y_wrong3(self):
+        with self.assertRaises(ValueError):
+            r = Rectangle(12, 15, 5, -2)
+
+    def test_instantiation_with_y_wrong4(self):
+        with self.assertRaises(TypeError):
+            r = Rectangle(12, 15, 5, 2.5)
+
+    def test_instantiation_with_y_wrong5(self):
+        with self.assertRaises(TypeError):
+            r = Rectangle(12, 15, 5, (2, ))
+
+    def test_instantiation_with_y_wrong(self):
+        with self.assertRaises(TypeError):
+            r = Rectangle(12, 15, 5, [2])
+
+    def test_instantiation_with_y_wrong6(self):
+        with self.assertRaises(TypeError):
+            r = Rectangle(12, 15, 5, {})
+
     def test_instantiation_with_width_and_height(self):
         r = Rectangle(12, 13)
         self.assertEqual(r.width, r.height - 1)
@@ -96,7 +144,7 @@ class TestRectangle(unittest.TestCase):
         r = Rectangle(15, 16)
         r.height = 20
         self.assertEqual(r.height, 20)
-        
+
     def test_x_getter(self):
         r = Rectangle(15, 16, 3, 1)
         self.assertEqual(r.x, 3)
@@ -109,120 +157,23 @@ class TestRectangle(unittest.TestCase):
     def test_y_getter(self):
         r = Rectangle(15, 16, 0, 1)
         self.assertEqual(r.y, 1)
-        
+
     def test_y_setter(self):
         r = Rectangle(15, 16, 0, 1)
         r.y = 3
         self.assertEqual(r.y, 3)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    def test_area_1_arg(self):
+        r = Rectangle(10, 15)
+        with self.assertRaises(TypeError):
+            r.area(23)
+
+    def test_area(self):
+        r = Rectangle(10, 15)
+        self.assertEqual(r.area(), 150)
+
+    def test_display(self):
+        pass
 
 
 if __name__ == '__main__':
