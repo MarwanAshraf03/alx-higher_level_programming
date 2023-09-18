@@ -23,3 +23,35 @@ class Square(Rectangle):
         """Size setter"""
         self.width = size
         self.height = size
+
+    def update(self, *args, **kwargs):
+        """updates square with given values"""
+        if args and len(args) > 0:
+            for i in range(len(args)):
+                if (i == 0) and (args[i] is not None):
+                    self.id = args[i]
+                if (i == 1) and (args[i] is not None):
+                    self.size = args[i]
+                if (i == 2) and (args[i] is not None):
+                    self.x = args[i]
+                if (i == 3) and (args[i] is not None):
+                    self.y = args[i]
+        else:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                if key == "size":
+                    self.size = value
+                if key == "x":
+                    self.x = value
+                if key == "y":
+                    self.y = value
+
+    def to_dictionary(self):
+        """returns dictionary of attributes of square"""
+        return {
+            "id": self.id,
+            "size": self.size,
+            "x": self.x,
+            "y": self.y
+        }

@@ -89,10 +89,12 @@ class Rectangle(Base):
         print(str[:-1])
 
     def __str__(self):
+        """Returns String representation of Rectangle"""
         return f"[Rectangle]" +\
             f" ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
 
     def update(self, *args, **kwargs):
+        """updates instance with given arguments"""
         if args and len(args) > 0:
             for i in range(len(args)):
                 if (i == 0) and (args[i] is not None):
@@ -117,3 +119,13 @@ class Rectangle(Base):
                     self.x = value
                 if key == "y":
                     self.y = value
+
+    def to_dictionary(self):
+        """returns dictionary of attributes of rectangle"""
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
