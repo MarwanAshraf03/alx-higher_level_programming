@@ -230,6 +230,26 @@ class TestRectangle(unittest.TestCase):
         sys.stdout = sys.__stdout__
         self.assertEqual(capOut.getvalue(), "####\n####\n####\n")
 
+    def test_display2(self):
+        """test using display method the right way"""
+        r = Rectangle(5, 2)
+        capOut = io.StringIO()
+        sys.stdout = capOut
+        r.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(capOut.getvalue(), "#####\n#####\n")
+
+    def test_display_x_err(self):
+        """test using display method the error way"""
+        with self.assertRaisesRegex(ValueError, "x must be >= 0"):
+            r = Rectangle(4, 3, -2)
+        
+
+    def test_display_y_err(self):
+        """test using display method the error way"""
+        with self.assertRaisesRegex(ValueError, "y must be >= 0"):
+            r = Rectangle(4, 3, 0, -2)
+
     def test_display_x(self):
         """test using display method the right way"""
         r = Rectangle(4, 3, 2)
@@ -257,7 +277,9 @@ class TestRectangle(unittest.TestCase):
         sys.stdout = sys.__stdout__
         self.assertEqual(capOut.getvalue(), "\n\n\n  ####\n  ####\n  ####\n")
 
-
+    def test_str_(self):
+        r = Rectangle(12, 14)
+        self.assertEqual(r.__str__, "")
 
 
 
