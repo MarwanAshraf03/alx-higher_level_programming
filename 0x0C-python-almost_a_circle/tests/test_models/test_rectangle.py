@@ -291,7 +291,10 @@ class TestRectangle(unittest.TestCase):
 
     def test_to_dictionary(self):
         r = Rectangle(12, 14)
-        self.assertEqual(r.to_dictionary(), "[Rectangle] (39) 0/0 - 12/14")
+        self.assertEqual(
+            r.to_dictionary(), {
+                'id': 40, 'width': 12, 'height': 14, 'x': 0, 'y': 0
+                })
 
 
 if __name__ == '__main__':
