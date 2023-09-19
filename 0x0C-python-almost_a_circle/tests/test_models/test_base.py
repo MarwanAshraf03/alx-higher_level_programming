@@ -15,15 +15,18 @@ class TestBase(unittest.TestCase):
         pass
 
     def test_instantiation(self):
+        """test instantiation"""
         b = Base()
         self.assertIsInstance(b, Base)
         self.re()
 
     def test_private_nb_objects(self):
+        """test instantiation"""
         with self.assertRaises(AttributeError):
             print(Base(12).__nb_instances)
 
     def test_auto_id(self):
+        """test instantiation"""
         b1 = Base()
         b2 = Base()
         b3 = Base()
@@ -32,6 +35,7 @@ class TestBase(unittest.TestCase):
         self.re()
 
     def test_assign_id(self):
+        """test instantiation"""
         b1 = Base()
         b2 = Base(12)
         b3 = Base()
@@ -41,6 +45,7 @@ class TestBase(unittest.TestCase):
         self.re()
 
     def test_(self):
+        """test instantiation"""
         pass
 
 
