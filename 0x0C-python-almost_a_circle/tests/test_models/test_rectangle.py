@@ -15,204 +15,206 @@ class TestRectangle(unittest.TestCase):
 
     def test_instantiation_with_None(self):
         """Doc"""
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, ""):
             r = Rectangle()
 
     def test_instantiation_with_width(self):
         """Doc"""
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, ""):
             r = Rectangle(12)
 
     def test_instantiation_with_width_wrong(self):
-        """Doc"""
-        with self.assertRaises(TypeError):
+        """test using string as width argument"""
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
             r = Rectangle('13', '12')
 
     def test_instantiation_with_width_wrong2(self):
-        """Doc"""
-        with self.assertRaises(ValueError):
+        """test using value < 0 as width argument"""
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
             r = Rectangle(-1, '12')
 
     def test_instantiation_with_width_wrong3(self):
-        """Doc"""
-        with self.assertRaises(TypeError):
+        """test using float value as width argument"""
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
             r = Rectangle(13.5, '12')
 
     def test_instantiation_with_width_wrong4(self):
-        """Doc"""
-        with self.assertRaises(TypeError):
+        """test using tuple value as width argument"""
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
             r = Rectangle((13.5, ), '12')
 
     def test_instantiation_with_width_wrong5(self):
-        """Doc"""
-        with self.assertRaises(TypeError):
+        """test using list value as width argument"""
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
             r = Rectangle([13.5], '12')
 
     def test_instantiation_with_width_wrong6(self):
-        """Doc"""
-        with self.assertRaises(TypeError):
+        """test using dictionary value as width argument"""
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
             r = Rectangle({}, '12')
 
     def test_instantiation_with_height_wrong(self):
-        """Doc"""
-        with self.assertRaises(TypeError):
+        """test using string as height argument"""
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
             r = Rectangle(12, '12')
 
     def test_instantiation_with_height_wrong2(self):
-        """Doc"""
-        with self.assertRaises(ValueError):
+        """test using value < 0 as height argument"""
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
             r = Rectangle(12, -1)
 
     def test_instantiation_with_height_wrong3(self):
-        """Doc"""
-        with self.assertRaises(TypeError):
+        """test using float value as height argument"""
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
             r = Rectangle(12, 13.5)
 
     def test_instantiation_with_height_wrong4(self):
-        """Doc"""
-        with self.assertRaises(TypeError):
+        """test using tuple value as height argument"""
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
             r = Rectangle(12, (13.5,))
 
     def test_instantiation_with_height_wrong5(self):
-        """Doc"""
-        with self.assertRaises(TypeError):
+        """test using list value as height argument"""
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
             r = Rectangle(12, [13.5])
 
     def test_instantiation_with_height_wrong6(self):
-        """Doc"""
-        with self.assertRaises(TypeError):
+        """test using dictionary value as height argument"""
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
             r = Rectangle(12, {})
 
     def test_instantiation_with_x_wrong(self):
-        """Doc"""
-        with self.assertRaises(TypeError):
+        """test using string as x argument"""
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
             r = Rectangle(12, 15, "2", 5)
 
     def test_instantiation_with_x_wrong2(self):
-        """Doc"""
-        with self.assertRaises(ValueError):
+        """test using value < 0 as x argument"""
+        with self.assertRaisesRegex(ValueError, "x must be >= 0"):
             r = Rectangle(12, 15, -2, 5)
 
     def test_instantiation_with_x_wrong3(self):
-        """Doc"""
-        with self.assertRaises(TypeError):
+        """test using float value as x argument"""
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
             r = Rectangle(12, 15, 2.5, 5)
 
     def test_instantiation_with_x_wrong4(self):
-        """Doc"""
-        with self.assertRaises(TypeError):
+        """test using tuple value as x argument"""
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
             r = Rectangle(12, 15, (2, ), 5)
 
     def test_instantiation_with_x_wrong5(self):
-        """Doc"""
-        with self.assertRaises(TypeError):
+        """test using list value as x argument"""
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
             r = Rectangle(12, 15, [2], 5)
 
     def test_instantiation_with_x_wrong6(self):
-        """Doc"""
-        with self.assertRaises(TypeError):
+        """test using dictionary value as x argument"""
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
             r = Rectangle(12, 15, {}, 5)
 
     def test_instantiation_with_y_wrong2(self):
-        """Doc"""
-        with self.assertRaises(TypeError):
+        """test using string as y argument"""
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
             r = Rectangle(12, 15, 5, "2")
 
     def test_instantiation_with_y_wrong3(self):
-        """Doc"""
-        with self.assertRaises(ValueError):
+        """test using value < 0 as y argument"""
+        with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             r = Rectangle(12, 15, 5, -2)
 
     def test_instantiation_with_y_wrong4(self):
-        """Doc"""
-        with self.assertRaises(TypeError):
+        """test using float value as y argument"""
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
             r = Rectangle(12, 15, 5, 2.5)
 
     def test_instantiation_with_y_wrong5(self):
-        """Doc"""
-        with self.assertRaises(TypeError):
+        """test using tuple value as y argument"""
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
             r = Rectangle(12, 15, 5, (2, ))
 
     def test_instantiation_with_y_wrong(self):
-        """Doc"""
-        with self.assertRaises(TypeError):
+        """test using list value as y argument"""
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
             r = Rectangle(12, 15, 5, [2])
 
     def test_instantiation_with_y_wrong6(self):
-        """Doc"""
-        with self.assertRaises(TypeError):
+        """test using dictionary value as y argument"""
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
             r = Rectangle(12, 15, 5, {})
 
     def test_instantiation_with_width_and_height(self):
-        """Doc"""
+        """test using only width and height as arguments"""
         r = Rectangle(12, 13)
         self.assertEqual(r.width, r.height - 1)
+        self.assertEqual(r.x, 0)
+        self.assertEqual(r.y, 0)
 
     def test_instantiation_full(self):
-        """Doc"""
+        """test using width, height, x, y and id"""
         r = Rectangle(12, 13, 0, 1, 14)
         self.assertEqual(r.width, r.height - 1)
         self.assertEqual(r.x, r.y - 1)
         self.assertEqual(r.id, 14)
 
     def test_width_getter(self):
-        """Doc"""
+        """test width getter"""
         r = Rectangle(15, 16)
         self.assertEqual(r.width, 15)
 
     def test_width_setter(self):
-        """Doc"""
+        """test width setter"""
         r = Rectangle(15, 16)
         r.width = 20
         self.assertEqual(r.width, 20)
 
     def test_height_getter(self):
-        """Doc"""
+        """test height getter"""
         r = Rectangle(15, 16)
         self.assertEqual(r.height, 16)
 
     def test_height_setter(self):
-        """Doc"""
+        """test height setter"""
         r = Rectangle(15, 16)
         r.height = 20
         self.assertEqual(r.height, 20)
 
     def test_x_getter(self):
-        """Doc"""
+        """test x getter"""
         r = Rectangle(15, 16, 3, 1)
         self.assertEqual(r.x, 3)
 
     def test_x_setter(self):
-        """Doc"""
+        """test x setter"""
         r = Rectangle(15, 16, 3, 1)
         r.x = 1
         self.assertEqual(r.x, 1)
 
     def test_y_getter(self):
-        """Doc"""
+        """test y getter"""
         r = Rectangle(15, 16, 0, 1)
         self.assertEqual(r.y, 1)
 
     def test_y_setter(self):
-        """Doc"""
+        """test y setter"""
         r = Rectangle(15, 16, 0, 1)
         r.y = 3
         self.assertEqual(r.y, 3)
 
     def test_area_1_arg(self):
-        """Doc"""
+        """test using area method with 1 argument"""
         r = Rectangle(10, 15)
         with self.assertRaises(TypeError):
             r.area(23)
 
     def test_area(self):
-        """Doc"""
+        """test using area method the right way"""
         r = Rectangle(10, 15)
         self.assertEqual(r.area(), 150)
 
     def test_display(self):
-        """Doc"""
-        pass
+        """test using area method the right way"""
+        # self.ass
 
 
 if __name__ == '__main__':

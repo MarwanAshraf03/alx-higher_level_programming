@@ -21,12 +21,12 @@ class TestBase(unittest.TestCase):
         self.re()
 
     def test_private_nb_objects(self):
-        """test instantiation"""
+        """test that nb_objects is private"""
         with self.assertRaises(AttributeError):
             print(Base(12).__nb_instances)
 
     def test_auto_id(self):
-        """test instantiation"""
+        """test auto assignment of id of instances"""
         b1 = Base()
         b2 = Base()
         b3 = Base()
@@ -35,7 +35,7 @@ class TestBase(unittest.TestCase):
         self.re()
 
     def test_assign_id(self):
-        """test instantiation"""
+        """test assigning id manually"""
         b1 = Base()
         b2 = Base(12)
         b3 = Base()
@@ -45,19 +45,19 @@ class TestBase(unittest.TestCase):
         self.re()
 
     def test_to_json_string(self):
-        """test instantiation"""
+        """test to_json_string function with normal input"""
         r1 = Rectangle(10, 7, 2, 8)
         dictionary = r1.to_dictionary()
         json_dictionary = Base.to_json_string([dictionary])
         self.assertIsInstance(json_dictionary, str)
     
     def test_to_json_string_empty(self):
-        """test instantiation"""
+        """test to_json_string function with empty list"""
         json_dictionary = Base.to_json_string([])
         self.assertEqual(json_dictionary, "[]")
 
     def test_to_json_string_None(self):
-        """test instantiation"""
+        """test to_json_string function with 'None' input"""
         json_dictionary = Base.to_json_string(None)
         self.assertEqual(json_dictionary, "[]")
 
