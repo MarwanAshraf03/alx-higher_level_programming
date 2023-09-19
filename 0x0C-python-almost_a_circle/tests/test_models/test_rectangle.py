@@ -7,7 +7,6 @@ import io
 import sys
 
 
-
 class TestRectangle(unittest.TestCase):
     """Define unittests for testing of Rectangle class"""
 
@@ -253,7 +252,6 @@ class TestRectangle(unittest.TestCase):
         """test using display method the error way"""
         with self.assertRaisesRegex(ValueError, "x must be >= 0"):
             r = Rectangle(4, 3, -2)
-        
 
     def test_display_y_err(self):
         """test using display method the error way"""
@@ -290,25 +288,6 @@ class TestRectangle(unittest.TestCase):
     def test_str_(self):
         r = Rectangle(12, 14)
         self.assertEqual(r.__str__(), "[Rectangle] (39) 0/0 - 12/14")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 if __name__ == '__main__':

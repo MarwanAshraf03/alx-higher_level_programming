@@ -50,7 +50,7 @@ class TestBase(unittest.TestCase):
         dictionary = r1.to_dictionary()
         json_dictionary = Base.to_json_string([dictionary])
         self.assertIsInstance(json_dictionary, str)
-    
+
     def test_to_json_string_empty(self):
         """test to_json_string function with empty list"""
         json_dictionary = Base.to_json_string([])
