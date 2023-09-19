@@ -36,7 +36,7 @@ class Base:
             for i in list_objs:
                 saved.append(i.to_dictionary())
         with open(f"{cls.__name__}.json", "w", encoding="utf-8") as f:
-            f.write(cls.to_json_string(saved), f)
+            f.write(cls.to_json_string(saved))
 
     @staticmethod
     def from_json_string(json_string):
