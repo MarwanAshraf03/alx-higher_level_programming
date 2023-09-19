@@ -56,6 +56,11 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             r = Rectangle({}, '12')
 
+    def test_instantiation_with_width_wrong7(self):
+        """test using 0 as width argument"""
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            r = Rectangle(0, '12')
+
     def test_instantiation_with_height_wrong(self):
         """test using string as height argument"""
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
@@ -85,6 +90,11 @@ class TestRectangle(unittest.TestCase):
         """test using dictionary value as height argument"""
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
             r = Rectangle(12, {})
+
+    def test_instantiation_with_height_wrong6(self):
+        """test using dictionary value as height argument"""
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
+            r = Rectangle(12, 0)
 
     def test_instantiation_with_x_wrong(self):
         """test using string as x argument"""
@@ -279,7 +289,7 @@ class TestRectangle(unittest.TestCase):
 
     def test_str_(self):
         r = Rectangle(12, 14)
-        self.assertEqual(r.__str__, "")
+        self.assertEqual(r.__str__(), "[Rectangle] (39) 0/0 - 12/14")
 
 
 
