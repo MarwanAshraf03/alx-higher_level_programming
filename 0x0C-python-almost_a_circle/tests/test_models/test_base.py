@@ -50,6 +50,16 @@ class TestBase(unittest.TestCase):
         dictionary = r1.to_dictionary()
         json_dictionary = Base.to_json_string([dictionary])
         self.assertIsInstance(json_dictionary, str)
+    
+    def test_to_json_string_empty(self):
+        """test instantiation"""
+        json_dictionary = Base.to_json_string([])
+        self.assertEqual(json_dictionary, "[]")
+
+    def test_to_json_string_None(self):
+        """test instantiation"""
+        json_dictionary = Base.to_json_string(None)
+        self.assertEqual(json_dictionary, "[]")
 
 
 if __name__ == '__main__':
