@@ -215,20 +215,69 @@ class TestRectangle(unittest.TestCase):
         r = Rectangle(10, 15)
         self.assertEqual(r.area(), 150)
 
-    def test_display(self):
-        """test using area method the right way"""
+    def test_display_with_arg(self):
+        """test using display method with an argument"""
         r = Rectangle(4, 3)
         with self.assertRaises(TypeError):
-            r.display()
+            r.display(5)
 
-    def test_display2(self):
-        """test using area method the right way"""
+    def test_display(self):
+        """test using display method the right way"""
         r = Rectangle(4, 3)
         capOut = io.StringIO()
         sys.stdout = capOut
         r.display()
         sys.stdout = sys.__stdout__
         self.assertEqual(capOut.getvalue(), "####\n####\n####\n")
+
+    def test_display_x(self):
+        """test using display method the right way"""
+        r = Rectangle(4, 3, 2)
+        capOut = io.StringIO()
+        sys.stdout = capOut
+        r.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(capOut.getvalue(), "  ####\n  ####\n  ####\n")
+
+    def test_display_y(self):
+        """test using display method the right way"""
+        r = Rectangle(4, 3, 0, 2)
+        capOut = io.StringIO()
+        sys.stdout = capOut
+        r.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(capOut.getvalue(), "\n\n####\n####\n####\n")
+
+    def test_display_x_y(self):
+        """test using display method the right way"""
+        r = Rectangle(4, 3, 2, 3)
+        capOut = io.StringIO()
+        sys.stdout = capOut
+        r.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(capOut.getvalue(), "\n\n\n  ####\n  ####\n  ####\n")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 if __name__ == '__main__':
     unittest.main()
