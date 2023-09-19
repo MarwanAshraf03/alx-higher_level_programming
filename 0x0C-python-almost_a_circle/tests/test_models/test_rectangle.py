@@ -290,11 +290,42 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r.__str__(), "[Rectangle] (39) 0/0 - 12/14")
 
     def test_to_dictionary(self):
+        """test using to_dictionary method"""
         r = Rectangle(12, 14)
         self.assertEqual(
             r.to_dictionary(), {
                 'id': 40, 'width': 12, 'height': 14, 'x': 0, 'y': 0
                 })
+
+    def test_update(self):
+        """test using update method for *args"""
+        r = Rectangle(12, 14)
+        r.update(12, 13, 15, 15, 6)
+        self.assertEqual(r.id, 12)
+        self.assertEqual(r.width, 13)
+        self.assertEqual(r.height, 15)
+        self.assertEqual(r.x, 15)
+        self.assertEqual(r.y, 6)
+
+    def test_update2(self):
+        """test using update method for **kwargs"""
+        r = Rectangle(12, 14)
+        r.update(id=12, width=13, height=15, x=15, y=6)
+        self.assertEqual(r.id, 12)
+        self.assertEqual(r.width, 13)
+        self.assertEqual(r.height, 15)
+        self.assertEqual(r.x, 15)
+        self.assertEqual(r.y, 6)
+
+    def test_update3(self):
+        """test using update method for both *args and **kwargs are given"""
+        r = Rectangle(12, 14)
+        r.update(12, 13, 15, 15, 6, id=12, width=13, height=15, x=15, y=6)
+        self.assertEqual(r.id, 12)
+        self.assertEqual(r.width, 13)
+        self.assertEqual(r.height, 15)
+        self.assertEqual(r.x, 15)
+        self.assertEqual(r.y, 6)
 
 
 if __name__ == '__main__':
