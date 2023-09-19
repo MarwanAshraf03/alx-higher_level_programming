@@ -23,7 +23,7 @@ class Base:
 
     def to_json_string(list_dictionaries):
         """returns JSON encoding of list_dictionaries"""
-        if not list_dictionaries or len(list_dictionaries) == 0:
+        if list_dictionaries is not None or len(list_dictionaries) == 0:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
