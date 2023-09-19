@@ -122,7 +122,8 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """returns dictionary of attributes of rectangle"""
-        return {"x": self.x,
+        return {
+            "x": self.x,
             "width": self.width,
             "id": self.id,
             "height": self.height,
