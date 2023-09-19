@@ -9,7 +9,6 @@ class TestSquare(unittest.TestCase):
     """Define unittests for testing of Square class"""
 
     def re(self):
-        """Doc"""
         """Reset nb_instances to 0"""
         Base._Base__nb_objects = 0
         pass
