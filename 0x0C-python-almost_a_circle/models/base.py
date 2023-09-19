@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Base Module"""
 import json
-
+from os import path
 
 class Base:
     """Base class"""
@@ -33,7 +33,7 @@ class Base:
         if list_objs:
             for i in list_objs:
                 saved.append(i.to_dictionary())
-        with open(f"{cls.__name__}.json", "w") as f:
+        with open(f"{cls.__name__}.json", "w", encoding="utf-8") as f:
             json.dump(saved, f)
 
     @staticmethod
@@ -54,15 +54,15 @@ class Base:
         d.update(**dictionary)
         return d
 
-    # @classmethod
-    # def load_from_file(cls):
-    #     """Loads instances from json file"""
-    #     fname = f"{cls.__name__}.json"
-    #     ret = []
-    #     if not Path(fname).is_file():
-    #         return ret
-    #     with open(fname, "r") as f:
-    #         lst = cls.from_json_string(f.read())
-    #     for i in lst:
-    #         ret.append(cls.create(**i))
-    #     return ret
+    @classmethod
+    def load_from_file(cls):
+        """Loads instances from json file"""
+        fname = f"{cls.__name__}.json"
+        ret = []
+        if not path.isfile(fname):
+            return ret
+        with open(fname, "r", encoding="utf-8") as f:
+            lst = cls.from_json_string(f.read())
+        for i in lst:
+            ret.append(cls.create(**i))
+        return ret
