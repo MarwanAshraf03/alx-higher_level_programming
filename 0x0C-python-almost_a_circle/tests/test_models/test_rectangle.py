@@ -3,6 +3,9 @@
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
+import io
+import sys
+
 
 
 class TestRectangle(unittest.TestCase):
@@ -214,8 +217,18 @@ class TestRectangle(unittest.TestCase):
 
     def test_display(self):
         """test using area method the right way"""
-        # self.ass
+        r = Rectangle(4, 3)
+        with self.assertRaises(TypeError):
+            r.display()
 
+    def test_display(self):
+        """test using area method the right way"""
+        r = Rectangle(4, 3)
+        capOut = io.StringIO()
+        sys.stdout = capOut
+        r.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(capOut.getvalue(), "####\n####\n####\n")
 
 if __name__ == '__main__':
     unittest.main()
