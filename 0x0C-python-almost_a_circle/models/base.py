@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Base Module"""
 import json
-from pathlib import Path
 
 
 class Base:
@@ -55,15 +54,15 @@ class Base:
         d.update(**dictionary)
         return d
 
-    @classmethod
-    def load_from_file(cls):
-        """Loads instances from json file"""
-        fname = f"{cls.__name__}.json"
-        ret = []
-        if not Path(fname).is_file():
-            return ret
-        with open(fname, "r") as f:
-            lst = cls.from_json_string(f.read())
-        for i in lst:
-            ret.append(cls.create(**i))
-        return ret
+    # @classmethod
+    # def load_from_file(cls):
+    #     """Loads instances from json file"""
+    #     fname = f"{cls.__name__}.json"
+    #     ret = []
+    #     if not Path(fname).is_file():
+    #         return ret
+    #     with open(fname, "r") as f:
+    #         lst = cls.from_json_string(f.read())
+    #     for i in lst:
+    #         ret.append(cls.create(**i))
+    #     return ret
