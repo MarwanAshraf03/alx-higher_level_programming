@@ -221,7 +221,7 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             r.display()
 
-    def test_display(self):
+    def test_display2(self):
         """test using area method the right way"""
         r = Rectangle(4, 3)
         capOut = io.StringIO()
