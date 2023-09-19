@@ -15,132 +15,132 @@ class TestRectangle(unittest.TestCase):
 
     def test_instantiation_with_None(self):
         """Doc"""
-        with self.assertRaises(TypeError):
+        with self.assertRaises(TypeError) as e:
             r = Rectangle()
 
     def test_instantiation_with_width(self):
         """Doc"""
-        with self.assertRaises(TypeError):
+        with self.assertRaises(TypeError) as e:
             r = Rectangle(12)
 
     def test_instantiation_with_width_wrong(self):
         """Doc"""
-        with self.assertRaises(TypeError):
+        with self.assertRaises(TypeError) as e:
             r = Rectangle('13', '12')
 
     def test_instantiation_with_width_wrong2(self):
         """Doc"""
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ValueError) as e:
             r = Rectangle(-1, '12')
 
     def test_instantiation_with_width_wrong3(self):
         """Doc"""
-        with self.assertRaises(TypeError):
+        with self.assertRaises(TypeError) as e:
             r = Rectangle(13.5, '12')
 
     def test_instantiation_with_width_wrong4(self):
         """Doc"""
-        with self.assertRaises(TypeError):
+        with self.assertRaises(TypeError) as e:
             r = Rectangle((13.5, ), '12')
 
     def test_instantiation_with_width_wrong5(self):
         """Doc"""
-        with self.assertRaises(TypeError):
+        with self.assertRaises(TypeError) as e:
             r = Rectangle([13.5], '12')
 
     def test_instantiation_with_width_wrong6(self):
         """Doc"""
-        with self.assertRaises(TypeError):
+        with self.assertRaises(TypeError) as e:
             r = Rectangle({}, '12')
 
     def test_instantiation_with_height_wrong(self):
         """Doc"""
-        with self.assertRaises(TypeError):
+        with self.assertRaises(TypeError) as e:
             r = Rectangle(12, '12')
 
     def test_instantiation_with_height_wrong2(self):
         """Doc"""
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ValueError) as e:
             r = Rectangle(12, -1)
 
     def test_instantiation_with_height_wrong3(self):
         """Doc"""
-        with self.assertRaises(TypeError):
+        with self.assertRaises(TypeError) as e:
             r = Rectangle(12, 13.5)
 
     def test_instantiation_with_height_wrong4(self):
         """Doc"""
-        with self.assertRaises(TypeError):
+        with self.assertRaises(TypeError) as e:
             r = Rectangle(12, (13.5,))
 
     def test_instantiation_with_height_wrong5(self):
         """Doc"""
-        with self.assertRaises(TypeError):
+        with self.assertRaises(TypeError) as e:
             r = Rectangle(12, [13.5])
 
     def test_instantiation_with_height_wrong6(self):
         """Doc"""
-        with self.assertRaises(TypeError):
+        with self.assertRaises(TypeError) as e:
             r = Rectangle(12, {})
 
     def test_instantiation_with_x_wrong(self):
         """Doc"""
-        with self.assertRaises(TypeError):
+        with self.assertRaises(TypeError) as e:
             r = Rectangle(12, 15, "2", 5)
 
     def test_instantiation_with_x_wrong2(self):
         """Doc"""
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ValueError) as e:
             r = Rectangle(12, 15, -2, 5)
 
     def test_instantiation_with_x_wrong3(self):
         """Doc"""
-        with self.assertRaises(TypeError):
+        with self.assertRaises(TypeError) as e:
             r = Rectangle(12, 15, 2.5, 5)
 
     def test_instantiation_with_x_wrong4(self):
         """Doc"""
-        with self.assertRaises(TypeError):
+        with self.assertRaises(TypeError) as e:
             r = Rectangle(12, 15, (2, ), 5)
 
     def test_instantiation_with_x_wrong5(self):
         """Doc"""
-        with self.assertRaises(TypeError):
+        with self.assertRaises(TypeError) as e:
             r = Rectangle(12, 15, [2], 5)
 
     def test_instantiation_with_x_wrong6(self):
         """Doc"""
-        with self.assertRaises(TypeError):
+        with self.assertRaises(TypeError) as e:
             r = Rectangle(12, 15, {}, 5)
 
     def test_instantiation_with_y_wrong2(self):
         """Doc"""
-        with self.assertRaises(TypeError):
+        with self.assertRaises(TypeError) as e:
             r = Rectangle(12, 15, 5, "2")
 
     def test_instantiation_with_y_wrong3(self):
         """Doc"""
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ValueError) as e:
             r = Rectangle(12, 15, 5, -2)
 
     def test_instantiation_with_y_wrong4(self):
         """Doc"""
-        with self.assertRaises(TypeError):
+        with self.assertRaises(TypeError) as e:
             r = Rectangle(12, 15, 5, 2.5)
 
     def test_instantiation_with_y_wrong5(self):
         """Doc"""
-        with self.assertRaises(TypeError):
+        with self.assertRaises(TypeError) as e:
             r = Rectangle(12, 15, 5, (2, ))
 
     def test_instantiation_with_y_wrong(self):
         """Doc"""
-        with self.assertRaises(TypeError):
+        with self.assertRaises(TypeError) as e:
             r = Rectangle(12, 15, 5, [2])
 
     def test_instantiation_with_y_wrong6(self):
         """Doc"""
-        with self.assertRaises(TypeError):
+        with self.assertRaises(TypeError) as e:
             r = Rectangle(12, 15, 5, {})
 
     def test_instantiation_with_width_and_height(self):
@@ -202,7 +202,7 @@ class TestRectangle(unittest.TestCase):
     def test_area_1_arg(self):
         """Doc"""
         r = Rectangle(10, 15)
-        with self.assertRaises(TypeError):
+        with self.assertRaises(TypeError) as e:
             r.area(23)
 
     def test_area(self):
