@@ -286,15 +286,16 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(capOut.getvalue(), "\n\n\n  ####\n  ####\n  ####\n")
 
     def test_str_(self):
+        self.re()
         r = Rectangle(12, 14)
-        self.assertEqual(r.__str__(), "[Rectangle] (39) 0/0 - 12/14")
+        self.assertEqual(r.__str__(), "[Rectangle] (1) 0/0 - 12/14")
 
     def test_to_dictionary(self):
         """test using to_dictionary method"""
         r = Rectangle(12, 14)
         self.assertEqual(
             r.to_dictionary(), {
-                'id': 40, 'width': 12, 'height': 14, 'x': 0, 'y': 0
+                'x': 0, 'width': 12, 'id': 2, 'height': 14, 'y': 0
                 })
 
     def test_update(self):

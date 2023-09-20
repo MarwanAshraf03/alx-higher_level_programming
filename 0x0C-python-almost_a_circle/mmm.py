@@ -36,8 +36,8 @@ if not passing:
     print("Regular tests are not passing")
     exit(1)
 
-file_path_to_update = "models/square.py"
-file_path_updated = "models/tmp_square.py"
+file_path_to_update = "models/base.py"
+file_path_updated = "models/tmp_base.py"
 if not os.path.exists(file_path_to_update):
     print("{} not found".format(file_path_to_update))
     exit(1)
@@ -51,19 +51,19 @@ try:
     # update file
     new_content = """#!/usr/bin/python3
 \"\"\" Random documentation \"\"\"
-from models.tmp_square import Square
+from models.tmp_base import Base
 
 
-class Square(Square):
+class Base(Base):
     \"\"\" Random documentation \"\"\"
 
-    @classmethod
-    def load_from_file(cls):
+    def __init__(self, id=None):
         \"\"\" Random documentation \"\"\"
-        if os.path.exists(filename):
-            return None
-        return super().load_from_file()
-"""
+        if id is None:
+            self.id = 89
+        else:
+            super().__init__(id)
+"""    
 
     with open(file_path_to_update, "w") as file:
         file.write(new_content)
