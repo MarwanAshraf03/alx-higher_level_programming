@@ -328,6 +328,35 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r.x, 15)
         self.assertEqual(r.y, 6)
 
+    def test_create(self):
+        """test using create method"""
+        r = Rectangle(1, 2)
+        r1 = r.create(**{"id":1})
+        self.assertIsInstance(r1, Rectangle)
+
+    def test_create2(self):
+        """test using create method"""
+        r = Rectangle(1, 2)
+        r1 = r.create(**{"id":1, "width": 2})
+        self.assertIsInstance(r1, Rectangle)
+
+    def test_create3(self):
+        """test using create method"""
+        r = Rectangle(1, 2)
+        r1 = r.create(**{"id":1, "width": 2, "height": 3})
+        self.assertIsInstance(r1, Rectangle)
+
+    def test_create4(self):
+        """test using create method"""
+        r = Rectangle(1, 2)
+        r1 = r.create(**{"id":1, "width": 2, "height": 3, "x": 1, "y": 2})
+        self.assertIsInstance(r1, Rectangle)
+
+    # def test_create(self):
+    #     """test using create method"""
+    #     r = Rectangle(1, 2)
+    #     r1 = r.create(**{"id":1, "width": 2, "height": 3})
+    #     self.assertIsInstance(r1, Rectangle)
 
 if __name__ == '__main__':
     unittest.main()
