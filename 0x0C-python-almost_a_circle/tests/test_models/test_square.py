@@ -242,6 +242,11 @@ class TestSquare(unittest.TestCase):
         r = Square(12)
         self.assertEqual(r.__str__(), "[Square] (1) 0/0 - 12")
 
+    def test_str_2(self):
+        self.re()
+        r = Square(15)
+        self.assertEqual(r.__str__(), "[Square] (1) 0/0 - 15")
+        ()
     def test_to_dictionary(self):
         """test using to_dictionary method"""
         r = Square(12)
