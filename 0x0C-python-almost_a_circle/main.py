@@ -60,7 +60,7 @@ class Rectangle(Rectangle):
     @classmethod
     def save_to_file(cls, list_objs):
         \"\"\" Random documentation \"\"\"
-        if list_objs is not None:
+        if list_objs is None or len(list_objs) > 0:
             super().save_to_file(list_objs)
 """
 
