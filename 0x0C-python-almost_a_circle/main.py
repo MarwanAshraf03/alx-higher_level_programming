@@ -58,11 +58,10 @@ class Rectangle(Rectangle):
     \"\"\" Random documentation \"\"\"
 
     @classmethod
-    def create(cls, **dictionary):
+    def save_to_file(cls, list_objs):
         \"\"\" Random documentation \"\"\"
-        if dictionary is not None and dictionary.get('height') is not None:
-            dictionary['height'] = dictionary.get('height') * 2
-        return super().create(dictionary)
+        if list_objs is not None:
+            super().save_to_file(list_objs)
 """
 
     with open(file_path_to_update, "w") as file:

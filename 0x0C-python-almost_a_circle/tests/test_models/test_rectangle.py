@@ -298,6 +298,17 @@ class TestRectangle(unittest.TestCase):
                 'x': 0, 'width': 12, 'id': 2, 'height': 14, 'y': 0
                 })
 
+    def test_to_json_string(self):
+        self.re()
+        r = Rectangle(1, 2, 3, 4)
+        r1 = Rectangle(2, 2, 3, 4)
+        json_str = Base.to_json_string([r.to_dictionary(), r1.to_dictionary()])
+        self.assertEqual(
+            json_str,
+            '[{"x": 3, "width": 1, "id": 1, "height": 2, "y": 4},' +
+            ' {"x": 3, "width": 2, "id": 2, "height": 2, "y": 4}]'
+              )
+
     def test_update(self):
         """test using update method for *args"""
         r = Rectangle(12, 14)
@@ -331,32 +342,45 @@ class TestRectangle(unittest.TestCase):
     def test_create(self):
         """test using create method"""
         r = Rectangle(1, 2)
-        r1 = r.create(**{"id":1})
+        r1 = r.create(**{"id": 1})
         self.assertIsInstance(r1, Rectangle)
 
     def test_create2(self):
         """test using create method"""
         r = Rectangle(1, 2)
-        r1 = r.create(**{"id":1, "width": 2})
+        r1 = r.create(**{"id": 1, "width": 2})
         self.assertIsInstance(r1, Rectangle)
 
     def test_create3(self):
         """test using create method"""
         r = Rectangle(1, 2)
-        r1 = r.create(**{"id":1, "width": 2, "height": 3})
+        r1 = r.create(**{"id": 1, "width": 2, "height": 3})
         self.assertIsInstance(r1, Rectangle)
 
     def test_create4(self):
         """test using create method"""
         r = Rectangle(1, 2)
-        r1 = r.create(**{"id":1, "width": 2, "height": 3, "x": 1, "y": 2})
+        r1 = r.create(**{"id": 1, "width": 2, "height": 3, "x": 1})
         self.assertIsInstance(r1, Rectangle)
 
-    # def test_create(self):
-    #     """test using create method"""
-    #     r = Rectangle(1, 2)
-    #     r1 = r.create(**{"id":1, "width": 2, "height": 3})
-    #     self.assertIsInstance(r1, Rectangle)
+    def test_create5(self):
+        """test using create method"""
+        r = Rectangle(1, 2)
+        r1 = r.create(**{"id": 1, "width": 2, "height": 3, "x": 1, "y": 2})
+        self.assertIsInstance(r1, Rectangle)
+
+    def test_save_to_file(self):
+        """test using save_to_file method"""
+        self.re()
+        r = Rectangle(1, 3)
+        r1 = Rectangle(2, 3)
+        Rectangle.save_to_file([r, r1])
+        with open("Rectangle.json", "r") as f:
+            self.assertEqual(
+                f.read(),
+                '[{"x": 0, "width": 1, "id": 1, "height": 3, "y": 0},' +
+                ' {"x": 0, "width": 2, "id": 2, "height": 3, "y": 0}]')
+
 
 if __name__ == '__main__':
     unittest.main()
