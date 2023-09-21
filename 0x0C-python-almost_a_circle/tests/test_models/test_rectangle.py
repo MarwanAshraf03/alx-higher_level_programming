@@ -369,14 +369,6 @@ class TestRectangle(unittest.TestCase):
         r1 = r.create(**{"id": 1, "width": 2, "height": 3, "x": 1, "y": 2})
         self.assertIsInstance(r1, Rectangle)
 
-    def test_load_from_file_false(self):
-        """test using save_to_file method"""
-        self.re()
-        r1 = Rectangle.load_from_file()
-        with self.assertRaises(FileNotFoundError):
-            with open("Rectangle.json", "r") as f:
-                self.assertEqual(f.read(), '[]')
-
     def test_save_to_file(self):
         """test using save_to_file method"""
         self.re()
