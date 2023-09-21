@@ -21,6 +21,11 @@ class TestSquare(unittest.TestCase):
         with self.assertRaises(TypeError):
             r = Square()
 
+    def test_instantiation_with_zero(self):
+        """Doc"""
+        with self.assertRaises(ValueError):
+            r = Square(0)
+
     def test_instantiation_with_size(self):
         """Doc"""
         r = Square(12)
@@ -247,6 +252,7 @@ class TestSquare(unittest.TestCase):
         r = Square(15)
         self.assertEqual(r.__str__(), "[Square] (1) 0/0 - 15")
         ()
+
     def test_to_dictionary(self):
         """test using to_dictionary method"""
         r = Square(12)
@@ -341,6 +347,12 @@ class TestSquare(unittest.TestCase):
             self.assertEqual(
                 f.read(),
                 '[{"id": 1, "size": 1, "x": 3, "y": 0}]')
+
+    def test_save_to_file4(self):
+        """test using save_to_file method"""
+        Square.save_to_file(None)
+        with open("Square.json", "r") as f:
+            self.assertEqual(f.read(), "[]")
 
     def test_load_from_file_true(self):
         """test using save_to_file method"""

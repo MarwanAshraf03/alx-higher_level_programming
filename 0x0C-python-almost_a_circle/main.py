@@ -36,8 +36,8 @@ if not passing:
     print("Regular tests are not passing")
     exit(1)
 
-file_path_to_update = "models/rectangle.py"
-file_path_updated = "models/tmp_rectangle.py"
+file_path_to_update = "models/square.py"
+file_path_updated = "models/tmp_square.py"
 if not os.path.exists(file_path_to_update):
     print("{} not found".format(file_path_to_update))
     exit(1)
@@ -51,16 +51,16 @@ try:
     # update file
     new_content = """#!/usr/bin/python3
 \"\"\" Random documentation \"\"\"
-from models.tmp_rectangle import Rectangle
+from models.tmp_square import Square
 
 
-class Rectangle(Rectangle):
+class Square(Square):
     \"\"\" Random documentation \"\"\"
 
     @classmethod
     def save_to_file(cls, list_objs):
         \"\"\" Random documentation \"\"\"
-        if list_objs is None or len(list_objs) > 0:
+        if list_objs is not None:
             super().save_to_file(list_objs)
 """
 
