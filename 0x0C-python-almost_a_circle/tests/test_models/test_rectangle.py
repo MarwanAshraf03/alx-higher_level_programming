@@ -16,12 +16,12 @@ class TestRectangle(unittest.TestCase):
         pass
 
     def test_instantiation_with_None(self):
-        """Doc"""
+        """test instantiation with None"""
         with self.assertRaisesRegex(TypeError, ""):
             r = Rectangle()
 
     def test_instantiation_with_width(self):
-        """Doc"""
+        """test instantiation with width only"""
         with self.assertRaisesRegex(TypeError, ""):
             r = Rectangle(12)
 
@@ -90,8 +90,8 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
             r = Rectangle(12, {})
 
-    def test_instantiation_with_height_wrong6(self):
-        """test using dictionary value as height argument"""
+    def test_instantiation_with_height_wrong7(self):
+        """test using 0 as height argument"""
         with self.assertRaisesRegex(ValueError, "height must be > 0"):
             r = Rectangle(12, 0)
 
@@ -125,6 +125,11 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             r = Rectangle(12, 15, {}, 5)
 
+    def test_instantiation_with_y_wrong(self):
+        """test using list value as y argument"""
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            r = Rectangle(12, 15, 5, [2])
+
     def test_instantiation_with_y_wrong2(self):
         """test using string as y argument"""
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
@@ -144,11 +149,6 @@ class TestRectangle(unittest.TestCase):
         """test using tuple value as y argument"""
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
             r = Rectangle(12, 15, 5, (2, ))
-
-    def test_instantiation_with_y_wrong(self):
-        """test using list value as y argument"""
-        with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            r = Rectangle(12, 15, 5, [2])
 
     def test_instantiation_with_y_wrong6(self):
         """test using dictionary value as y argument"""
@@ -231,7 +231,7 @@ class TestRectangle(unittest.TestCase):
             r.display(5)
 
     def test_display(self):
-        """test using display method the right way"""
+        """test using display method with no x or y"""
         r = Rectangle(4, 3)
         capOut = io.StringIO()
         sys.stdout = capOut
@@ -240,7 +240,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(capOut.getvalue(), "####\n####\n####\n")
 
     def test_display2(self):
-        """test using display method the right way"""
+        """test using display method with no x or y second time"""
         r = Rectangle(5, 2)
         capOut = io.StringIO()
         sys.stdout = capOut
@@ -248,18 +248,8 @@ class TestRectangle(unittest.TestCase):
         sys.stdout = sys.__stdout__
         self.assertEqual(capOut.getvalue(), "#####\n#####\n")
 
-    def test_display_x_err(self):
-        """test using display method the error way"""
-        with self.assertRaisesRegex(ValueError, "x must be >= 0"):
-            r = Rectangle(4, 3, -2)
-
-    def test_display_y_err(self):
-        """test using display method the error way"""
-        with self.assertRaisesRegex(ValueError, "y must be >= 0"):
-            r = Rectangle(4, 3, 0, -2)
-
     def test_display_x(self):
-        """test using display method the right way"""
+        """test using display method with x = 2, y = 0"""
         r = Rectangle(4, 3, 2)
         capOut = io.StringIO()
         sys.stdout = capOut
@@ -268,7 +258,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(capOut.getvalue(), "  ####\n  ####\n  ####\n")
 
     def test_display_y(self):
-        """test using display method the right way"""
+        """test using display method with x = 0, y = 2"""
         r = Rectangle(4, 3, 0, 2)
         capOut = io.StringIO()
         sys.stdout = capOut
@@ -277,7 +267,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(capOut.getvalue(), "\n\n####\n####\n####\n")
 
     def test_display_x_y(self):
-        """test using display method the right way"""
+        """test using display method with x = 2, y = 3"""
         r = Rectangle(4, 3, 2, 3)
         capOut = io.StringIO()
         sys.stdout = capOut
@@ -286,6 +276,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(capOut.getvalue(), "\n\n\n  ####\n  ####\n  ####\n")
 
     def test_str_(self):
+        """test __str__ method"""
         self.re()
         r = Rectangle(12, 14)
         self.assertEqual(r.__str__(), "[Rectangle] (1) 0/0 - 12/14")
@@ -299,6 +290,7 @@ class TestRectangle(unittest.TestCase):
                 })
 
     def test_to_json_string(self):
+        """test to_json_string method"""
         self.re()
         r = Rectangle(1, 2, 3, 4)
         r1 = Rectangle(2, 2, 3, 4)
@@ -340,37 +332,37 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r.y, 6)
 
     def test_create(self):
-        """test using create method"""
+        """test using create method with id only"""
         r = Rectangle(1, 2)
         r1 = r.create(**{"id": 1})
         self.assertIsInstance(r1, Rectangle)
 
     def test_create2(self):
-        """test using create method"""
+        """test using create method with id and width"""
         r = Rectangle(1, 2)
         r1 = r.create(**{"id": 1, "width": 2})
         self.assertIsInstance(r1, Rectangle)
 
     def test_create3(self):
-        """test using create method"""
+        """test using create method with id, width and height"""
         r = Rectangle(1, 2)
         r1 = r.create(**{"id": 1, "width": 2, "height": 3})
         self.assertIsInstance(r1, Rectangle)
 
     def test_create4(self):
-        """test using create method"""
+        """test using create method with id, width, height and x"""
         r = Rectangle(1, 2)
         r1 = r.create(**{"id": 1, "width": 2, "height": 3, "x": 1})
         self.assertIsInstance(r1, Rectangle)
 
     def test_create5(self):
-        """test using create method"""
+        """test using create method with id, width, height, x and y"""
         r = Rectangle(1, 2)
         r1 = r.create(**{"id": 1, "width": 2, "height": 3, "x": 1, "y": 2})
         self.assertIsInstance(r1, Rectangle)
 
     def test_save_to_file(self):
-        """test using save_to_file method"""
+        """test using save_to_file method with 2 instances"""
         self.re()
         r = Rectangle(1, 3)
         r1 = Rectangle(2, 3)
@@ -382,13 +374,13 @@ class TestRectangle(unittest.TestCase):
                 ' {"x": 0, "width": 2, "id": 2, "height": 3, "y": 0}]')
 
     def test_save_to_file2(self):
-        """test using save_to_file method"""
+        """test using save_to_file method with empty list"""
         Rectangle.save_to_file([])
         with open("Rectangle.json", "r") as f:
             self.assertEqual(f.read(), "[]")
 
     def test_save_to_file3(self):
-        """test using save_to_file method"""
+        """test using save_to_file method with one instance"""
         self.re()
         r = Rectangle(1, 3)
         Rectangle.save_to_file([r])
@@ -398,12 +390,12 @@ class TestRectangle(unittest.TestCase):
                 '[{"x": 0, "width": 1, "id": 1, "height": 3, "y": 0}]')
 
     def test_save_to_file4(self):
-        """test using save_to_file method"""
+        """test using save_to_file method with None"""
         Rectangle.save_to_file(None)
         with open("Rectangle.json", "r") as f:
             self.assertEqual(f.read(), "[]")
 
-    def test_load_from_file_true(self):
+    def test_load_from_file(self):
         """test using save_to_file method"""
         self.re()
         r = Rectangle(1, 3)
