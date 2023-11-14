@@ -1,4 +1,5 @@
 #!/usr/bin/node
+// rectangle class
 class Rectangle {
   #width;
   #height;
