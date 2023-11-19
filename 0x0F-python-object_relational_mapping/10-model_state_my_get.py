@@ -12,11 +12,7 @@ if __name__ == "__main__":
                                    argv[3]), pool_pre_ping=True)
     Session = sessionmaker(engine)
     session = Session()
-    name = ''
-    for char in argv[4].split()[0]:
-        if char not in ('"\',;:'):
-            name += char
-    row = session.query(State.id).filter_by(State.name==name)\
+    row = session.query(State.id).filter(State.name==argv[4])\
         .order_by(State.id).all()
     if row:
         print(row[0].id)
