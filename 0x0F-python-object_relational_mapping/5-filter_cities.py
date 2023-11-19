@@ -22,7 +22,8 @@ def main():
                 ORDER BY cities.id ASC".format(name))
     rows = cur.fetchall()
     for row in range(len(rows)):
-        print(rows[row][0], end=', ' if row != len(rows) - 1 else ' \n')
+        print(rows[row][0], end=', ' if row != len(rows) - 1 else '')
+    print()
     cur.close()
     db.close()
 
