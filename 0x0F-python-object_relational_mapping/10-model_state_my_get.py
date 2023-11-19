@@ -15,7 +15,7 @@ if __name__ == "__main__":
     row = session.query(State).filter(State.name == argv[4])\
         .order_by(State.id).all()
     if row:
-        print(f"{row[0].id}")
+        print(row[0].id)
     else:
-        print("Not Found")
+        print("Not found")
     session.close()
