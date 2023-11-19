@@ -16,7 +16,7 @@ if __name__ == "__main__":
     for char in argv[4].split()[0]:
         if char not in ('"\',;:'):
             name += char
-    row = session.query(State.id).filter(State.name==name)\
+    row = session.query(State.id).filter_by(State.name==name)\
         .order_by(State.id).all()
     if row:
         print(row[0].id)
