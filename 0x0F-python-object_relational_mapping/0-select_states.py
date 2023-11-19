@@ -14,6 +14,6 @@ def main():
     for row in cur.fetchall():
         print(row)
 
-
+s
 if __name__ == "__main__":
     main()
