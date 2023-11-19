@@ -18,6 +18,8 @@ def main():
     cur.execute(query)
     for row in cur.fetchall():
         print(row)
+    cur.close()
+    db.close()
 
 
 if __name__ == "__main__":
