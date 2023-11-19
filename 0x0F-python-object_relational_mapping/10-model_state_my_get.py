@@ -22,8 +22,4 @@ if __name__ == "__main__":
         print(row.id)
     else:
         print("Not Found")
-    # rows = session.query(State).get
-    # for row in rows:
-    #     if ('a' in row.name):
-    #         print(f"{row.id}: {row.name}")
     session.close()
