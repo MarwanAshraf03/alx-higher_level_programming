@@ -13,6 +13,6 @@ class State(Base):
     name = Column("name", String(128), nullable=False)
 
 
-engine = create_engine('mysql+mysqldb://root:root@localhost/hbtn_0e_6_usa',
-                       pool_pre_ping=True)
-Base.metadata.create_all(bind=engine)
+# engine = create_engine('mysql+mysqldb://root:root@localhost/hbtn_0e_6_usa',
+#                        pool_pre_ping=True)
+# Base.metadata.create_all(bind=engine)
