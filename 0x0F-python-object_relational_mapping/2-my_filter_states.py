@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """A python module to print
-states which has N as a first letter in
-their name from a database"""
+states which their names
+match user input from a database"""
 
 
 def main():
