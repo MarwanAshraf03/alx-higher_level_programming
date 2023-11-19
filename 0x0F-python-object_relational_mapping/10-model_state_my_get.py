@@ -12,7 +12,7 @@ if __name__ == "__main__":
                                    argv[3]), pool_pre_ping=True)
     Session = sessionmaker(engine)
     session = Session()
-    row = session.query(State.id).filter(State.name==argv[4])\
+    row = session.query(State.id).filter(State.name == argv[4])\
         .order_by(State.id).all()
     if row:
         print(row[0].id)
