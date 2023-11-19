@@ -14,7 +14,7 @@ def main():
     cur.execute("SELECT * FROM states ORDER BY states.id ASC")
     for row in cur.fetchall():
 
-        if row[1].startswith('N'):
+        if row[1] == argss[3]:
             print(row)
 
 
