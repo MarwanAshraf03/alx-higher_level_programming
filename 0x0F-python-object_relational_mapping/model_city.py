@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""A module that creates table states in hbtn_0e_6_usa"""
+"""A module that creates table cities in hbtn_0e_6_usa"""
 from sqlalchemy import ForeignKey, Column, String, Integer
 from model_state import Base
 

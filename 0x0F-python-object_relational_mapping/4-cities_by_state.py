@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-"""A python module to print
-states which their names
-match user input from a database"""
+"""
+A python module to print
+cities ids, cities names, and states names
+"""
 
 
 def main():

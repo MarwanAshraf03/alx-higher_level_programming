@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""A module to fetch all states in states table"""
+"""A module to fetch all states that match user
+input from states table (sql injection free)"""
 if __name__ == "__main__":
     from sqlalchemy import create_engine
     from model_state import Base, State

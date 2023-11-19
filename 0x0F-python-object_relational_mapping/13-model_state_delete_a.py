@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""A module to fetch all states in states table"""
+"""A module to delete all states having 'a' in its name from states table"""
 if __name__ == "__main__":
     from sqlalchemy import create_engine
     from model_state import Base, State

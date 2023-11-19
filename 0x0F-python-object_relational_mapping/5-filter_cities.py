@@ -1,7 +1,9 @@
 #!/usr/bin/python3
-"""A python module to print
+"""
+A python module to print
 states which their names
-match user input from a database"""
+match user input from a database
+"""
 
 
 def main():
