@@ -16,11 +16,10 @@ if __name__ == "__main__":
     for char in argv[4].split()[0]:
         if char not in ('"\',;:'):
             name += char
-    rows = session.query(State.id).filter_by(name=name)\
-        .order_by(State.id).all()
-    if rows:
-        for row in rows:
-            print(row.id)
+    row = session.query(State.id).filter_by(name=name)\
+        .order_by(State.id).first()
+    if row:
+        print(row.id)
     else:
         print("Not Found")
     # rows = session.query(State).get
