@@ -13,8 +13,8 @@ def main():
         port=3306,
         user=argss[0], passwd=argss[1], db=argss[2])
     cur = db.cursor()
-    query = "SELECT * FROM states WHERE\
-    name LIKE '{}' ORDER BY states.id ASC".format(argss[3])
+    query = """SELECT * FROM states WHERE
+    name LIKE '{}' ORDER BY states.id ASC""".format(argss[3])
     cur.execute(query)
     for row in cur.fetchall():
         print(row)
