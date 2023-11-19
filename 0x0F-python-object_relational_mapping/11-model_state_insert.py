@@ -12,13 +12,9 @@ if __name__ == "__main__":
                                    argv[3]), pool_pre_ping=True)
     Session = sessionmaker(engine)
     session = Session()
-    row = session.query(State).filter(State.name == argv[4])\
-        .order_by(State.id).all()
-    if row:
-        print(row[0].id)
-    else:
-        # there was an error in checks 5 and 8 because
-        # I didn't copy the "Not found" instead I wrote it
-        # like "Not 'f'ound" this caused an error!!!!!
-        print("Not found")
+    newState = State(name="Louisiana")
+    session.add(newState)
+    addedState = session.query(State).filter(State.name == "Louisiana").all()
+    print(addedState[0].id)
+    session.commit()
     session.close()
