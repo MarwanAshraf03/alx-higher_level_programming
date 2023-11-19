@@ -14,8 +14,12 @@ def main():
         user=argss[0], passwd=argss[1], db=argss[2])
     cur = db.cursor()
     """The Binary keyword is used to provide case-sensitive comparison"""
+    name = ''
+    for char in argss[3].split()[0]:
+        if char not in ('"\',;:'):
+            name += char
     query = """SELECT * FROM states WHERE
-    BINARY name = '{}' ORDER BY states.id ASC""".format(argss[3])
+    BINARY name = '{}' ORDER BY states.id ASC""".format(name)
     cur.execute(query)
     for row in cur.fetchall():
         print(row)
