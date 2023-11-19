@@ -14,7 +14,7 @@ def main():
         user=argss[0], passwd=argss[1], db=argss[2])
     cur = db.cursor()
     query = "SELECT * FROM states WHERE\
-    name like '{}' ORDER BY states.id ASC".format(argss[3])
+    name LIKE '{}' ORDER BY states.id ASC".format(argss[3])
     cur.execute(query)
     for row in cur.fetchall():
         print(row)
