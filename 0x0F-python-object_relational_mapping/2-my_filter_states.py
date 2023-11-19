@@ -9,7 +9,9 @@ def main():
     import sys
     argss = sys.argv[1:]
     db = MySQLdb.Connect(
-        host="localhost", user=argss[0], passwd=argss[1], db=argss[2])
+        host="localhost",
+        port=3306,
+        user=argss[0], passwd=argss[1], db=argss[2])
     cur = db.cursor()
     query = "SELECT * FROM states WHERE\
     name like '{}' ORDER BY states.id ASC".format(argss[3])
