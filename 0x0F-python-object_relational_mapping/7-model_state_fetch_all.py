@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""A module to fetch all states in states table"""
 from sqlalchemy import create_engine
 from model_state import State
 from sqlalchemy.orm import sessionmaker
