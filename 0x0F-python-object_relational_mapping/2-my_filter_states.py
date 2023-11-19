@@ -11,10 +11,9 @@ def main():
     db = MySQLdb.Connect(
         host="localhost", user=argss[0], passwd=argss[1], db=argss[2])
     cur = db.cursor()
-    cur.execute("SELECT * FROM states ORDER BY states.id ASC")
+    query = "SELECT * FROM states WHERE name = '{}' ORDER BY states.id ASC".format(argss[3])
+    cur.execute(query)
     for row in cur.fetchall():
-
-        if row[1] == argss[3]:
             print(row)
 
 
