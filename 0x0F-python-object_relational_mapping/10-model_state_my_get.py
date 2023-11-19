@@ -10,10 +10,9 @@ if __name__ == "__main__":
                            .format(argv[1],
                                    argv[2],
                                    argv[3]), pool_pre_ping=True)
-    Base.metadata.create_all(engine)
     Session = sessionmaker(engine)
     session = Session()
-    row = session.query(State.id).filter(State.name == argv[4])\
+    row = session.query(State).filter(State.name == argv[4])\
         .order_by(State.id).all()
     if row:
         print(row[0].id)
