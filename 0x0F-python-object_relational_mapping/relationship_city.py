@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """A module that creates table cities in hbtn_0e_6_usa"""
 from sqlalchemy import ForeignKey, Column, String, Integer
-from model_state import Base
+from relationship_state import Base
 
 
 class City(Base):

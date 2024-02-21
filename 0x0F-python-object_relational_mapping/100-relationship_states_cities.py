@@ -2,8 +2,6 @@
 """A module to print cities, states, and cities' ids"""
 if __name__ == "__main__":
     from sqlalchemy import create_engine
-    # from model_state import Base, State
-    # from model_city import City
     from relationship_state import State
     from relationship_city import City
     from sqlalchemy.orm import sessionmaker
@@ -17,7 +15,7 @@ if __name__ == "__main__":
     session = Session()
 
     n_state = State(name='California')
-    n_city = City(name='San Francisco')
+    n_city = City(name='San Francisco', state_id=n_state.id)
 
     session.add(n_state)
     session.add(n_city)
