@@ -16,8 +16,8 @@ if __name__ == "__main__":
     Session = sessionmaker(engine)
     session = Session()
 
-    n_state = State(name = 'California')
-    n_city = City(name = 'San Francisco')
+    n_state = State(name='California')
+    n_city = City(name='San Francisco')
 
     session.add(n_state)
     session.add(n_city)
