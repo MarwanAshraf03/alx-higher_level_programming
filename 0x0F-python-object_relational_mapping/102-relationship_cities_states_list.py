@@ -18,10 +18,5 @@ if __name__ == "__main__":
     cities = session.query(City).all()
     for i in cities:
         print(f"{i.id}: {i.name} -> {i.states.name}")
-        # for j in i.cities:
-        #     print(f"\t{j.id}: {j.name}")
-        # for j in cities:
-            # if i.id == j.state_id:
-            #     print(f"\t{j.id}: {j.name}")
 
     session.close()
