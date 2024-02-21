@@ -15,4 +15,4 @@ class State(Base):
                 autoincrement=True,
                 nullable=False)
     name = Column("name", String(128), nullable=False)
-    cities = relationship('City', backref='state', cascade='all, delete')
+    cities = relationship('City', backref='states', cascade='all, delete')
