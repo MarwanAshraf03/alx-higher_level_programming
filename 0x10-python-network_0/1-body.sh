@@ -1,3 +1,3 @@
 #!/bin/bash
 # a comment
-curl -L "$1"
+curl -Ls "$1"
