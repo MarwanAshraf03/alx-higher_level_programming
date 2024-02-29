@@ -1,3 +1,3 @@
 #!/bin/bash
 # a comment
-curl -sI "$1" | greb -i Content-Length
+curl -sI "$1" | greb -i Content-Length | awk '{print $2}'
