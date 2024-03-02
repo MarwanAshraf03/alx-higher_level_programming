@@ -1,3 +1,3 @@
 #!/bin/bash
 # a comment
-curl -sI "$1" | grep HTTP | awk '{print $2}'
+curl -s -o /dev/null -w "%{http_code}" "$1"
