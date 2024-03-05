@@ -11,3 +11,4 @@ if __name__ == "__main__":
     print(resp.content)
     print(type(resp.content.decode('utf-8')))
     print(resp.content.decode('utf-8'))
+    print(dict(resp.content.decode('utf-8')))
