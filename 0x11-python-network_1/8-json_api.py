@@ -16,5 +16,5 @@ if __name__ == "__main__":
             print(f"[{d['id']}] {d['name']}")
         else:
             print('No result')
-    except:
+    except Exception:
         print("Not a valid JSON")
