@@ -4,4 +4,5 @@ if __name__ == "__main__":
     import requests
     import sys
     resp = requests.get(sys.argv[1]).headers
-    print(resp['X-Request-Id'])
+    if 'X-Request-Id' in resp.keys():
+        print(resp['X-Request-Id'])
