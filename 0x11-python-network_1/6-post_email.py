@@ -5,4 +5,5 @@ if __name__ == "__main__":
     from urllib import parse
     import sys
     values = {'email': sys.argv[2]}
-    requests.post(sys.argv[1], values)
+    resp = requests.post(sys.argv[1], values)
+    print(resp.content.decode('utf-8'))
