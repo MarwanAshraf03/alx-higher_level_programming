@@ -8,7 +8,8 @@ if __name__ == "__main__":
     else:
         values = {'q': ""}
     resp = requests.post("http://0.0.0.0:5000/search_user", values)
-    print(dir(resp))
+    print(dir(resp.json))
+    print(dir(resp.json))
     # print(resp.content)
     # print(type(resp.content.decode('utf-8')))
     # print(resp.content.decode('utf-8'))
