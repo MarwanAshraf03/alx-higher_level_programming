@@ -3,10 +3,8 @@
 if __name__ == "__main__":
     import requests
     import sys
-    # resp = requests.get(sys.argv[1])
-    resp = requests.get("https://intranet.alxswe.com/projects/300")
-    print(dir(resp))
-    # if resp.cod
-    # print(response.read().decode('utf-8'))
-    # except error.HTTPError as e:
-    #     print(f"Error code: {e.code}")
+    resp = requests.get(sys.argv[1])
+    if resp.status_code > 400:
+        print(f"Error code: {resp.status_code}")
+    else:
+        print(resp.content.decode('utf-8'))
