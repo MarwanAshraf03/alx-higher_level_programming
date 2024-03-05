@@ -8,9 +8,8 @@ if __name__ == "__main__":
     else:
         values = {'q': ""}
     resp = requests.post("http://0.0.0.0:5000/search_user", values)
-    # print(dir(resp))
-    print(resp.json())
-    # print(resp.content)
-    # print(type(resp.content.decode('utf-8')))
-    # print(resp.content.decode('utf-8'))
-    # print(dict(resp.content.decode('utf-8')))
+    d = resp.json()
+    if len(d.keys()) >= 2:
+        print(f"[{d['id']}] {d['name']}")
+    else:
+        print('No result')
