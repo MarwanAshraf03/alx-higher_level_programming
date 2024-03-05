@@ -3,6 +3,5 @@
 import requests
 resp = requests.get('https://alx-intranet.hbtn.io/status')
 print(f"Body response:\n\t\
-- type: {type(resp)}\n\t\
-- content: {resp}\n\t\
-- utf8 content: {resp.decode('utf-8')}")
+- type: {type(resp.content.decode('utf-8'))}\n\t\
+- content: {resp.content.decode('utf-8')}")
