@@ -15,14 +15,10 @@ if __name__ == "__main__":
     Session = sessionmaker(engine)
     session = Session()
 
-    # cities = session.query(City).all()
     states = session.query(State).all()
     for i in states:
         print(f"{i.id}: {i.name}")
         for j in i.cities:
             print(f"\t{j.id}: {j.name}")
-        # for j in cities:
-            # if i.id == j.state_id:
-            #     print(f"\t{j.id}: {j.name}")
 
     session.close()
