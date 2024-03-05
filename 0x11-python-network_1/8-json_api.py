@@ -12,10 +12,9 @@ if __name__ == "__main__":
     resp = requests.post("http://0.0.0.0:5000/search_user", values)
     try:
         d = resp.json()
-    except exceptions.JSONDecodeError as e:
+        if len(d.keys()) >= 2:
+            print(f"[{d['id']}] {d['name']}")
+        else:
+            print('No result')
+    except:
         print("Not a valid JSON")
-        exit()
-    if len(d.keys()) >= 2:
-        print(f"[{d['id']}] {d['name']}")
-    else:
-        print('No result')
