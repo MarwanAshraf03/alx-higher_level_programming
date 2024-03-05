@@ -11,5 +11,6 @@ def find_peak(list_of_integers):
     else:
         return list_of_integers[0]
 
+
 def max(x, y):
     return x if x > y else y
