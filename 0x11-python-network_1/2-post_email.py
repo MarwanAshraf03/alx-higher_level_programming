@@ -4,7 +4,8 @@ if __name__ == "__main__":
     from urllib import request
     from urllib import parse
     import sys
-    data = parse.urlencode(sys.argv[2])
+    values = {'email': sys.argv[2]}
+    data = parse.urlencode(values)
     data = data.encode('ascii') # data should be bytes
     req = request.Request(sys.argv[0], data)
     with request.urlopen(req) as response:
