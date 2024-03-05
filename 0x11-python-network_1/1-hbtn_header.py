@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""To fetch https://alx-intranet.hbtn.io/status"""
+"""Find X-Request-Id value"""
 from urllib import request
 import sys
 with request.urlopen(sys.argv[1]) as response:
