@@ -3,12 +3,9 @@
 if __name__ == "__main__":
     import requests
     import sys
-    data = {
-    "Accept": "application/vnd.github+json",
-    "Authorization": f"Bearer {sys.argv[2]}",
-    "X-GitHub-Api-Version": "2022-11-28"
-    }
-    # resp = requests.post(f"https://api.github.com/users/{sys.argv[1]}", data)
-    resp = requests.post(f"https://api.github.com/users/{sys.argv[1]}", data)
-    print(resp.json()['id'])
-    # print(resp.content)
+    data = (sys.argv[1], sys.argv[2])
+    resp = requests.get("https://api.github.com/user", auth=data)
+    try:
+        print(resp.json()['id'])
+    except Exception:
+        print("None")
