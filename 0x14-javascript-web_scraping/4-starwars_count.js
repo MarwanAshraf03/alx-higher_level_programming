@@ -1,6 +1,6 @@
 #!/usr/bin/node
 const request = require('request');
-const filter = 18;
+const filter = '/18/';
 request(process.argv[2], function (error, response, body) {
   if (error) throw error;
   const b = JSON.parse(body);
