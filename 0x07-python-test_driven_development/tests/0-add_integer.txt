@@ -1,0 +1,57 @@
+``0-add_integer`` module
+========================
+
+Using ``add_integer``
+---------------------
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Two positive integer
+>>> add_integer(1, 2)
+3
+
+Two positive and negative integers
+>>> add_integer(100, -2)
+98
+
+One integer
+>>> add_integer(2)
+100
+
+Float and negative numbers
+>>> add_integer(100.3, -2)
+98
+
+giving wrong input as b
+>>> add_integer(4, "School")
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+giving wrong input as a
+>>> add_integer(None)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+giving wrong inputs as a and b
+>>> add_integer(None, None)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+giving wrong inputs as a
+>>> add_integer("School", 4)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer(float('inf'))
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(float('nan'))
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
